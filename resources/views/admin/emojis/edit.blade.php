@@ -25,8 +25,12 @@
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
-                            <label for="name">Level Name</label>
+                            <label for="name">Emoji Name</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $emoji->name) }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Emoji Image</label>
+                            <input type="text" class="form-control" id="image" name="image" value="{{ old('image', $emoji->image) }}" />
                         </div>
                         <a href="{{ route('admin.emojis.index') }}" class="btn btn-default">Cancel</a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>

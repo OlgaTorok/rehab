@@ -25,6 +25,10 @@
                             <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
                         </div>
+                        <div class="form-group">
+                            <label for="image">Image</label>
+                            <input type="text" class="form-control" id="image" name="image" value="{{ old('image') }}" />
+                        </div>
                         <a href="{{ route('admin.emojis.index') }}" class="btn btn-default">Cancel</a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
                     </form>

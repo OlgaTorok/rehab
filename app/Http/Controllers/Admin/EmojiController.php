@@ -38,7 +38,7 @@ class EmojiController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.emojis.create');
     }
 
     /**
@@ -49,7 +49,19 @@ class EmojiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:191',
+            'image' => 'required|max:191'
+          ]);
+
+          $emoji = new Emoji();
+          $emoji->name = $request->input('name');
+          $emoji->image = $request->input('image');
+          $emoji->save();
+
+          $session = $request->session()->flash('message', 'Emoji added successfully!');
+
+          return redirect()->route('admin.emojis.index');
     }
 
     /**
@@ -60,7 +72,11 @@ class EmojiController extends Controller
      */
     public function show($id)
     {
-        //
+        $emoji = Emoji::findOrFail($id);
+
+        return view('admin.emojis.show')->with(array(
+            'emoji' => $emoji
+        ));
     }
 
     /**
@@ -71,7 +87,11 @@ class EmojiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $emoji = Emoji::findOrFail($id);
+
+        return view('admin.emojis.edit')->with(array(
+            'emoji' => $emoji
+        ));
     }
 
     /**
@@ -83,7 +103,20 @@ class EmojiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $emoji = Emoji::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required|max:191'
+            'image' => 'required|max:191'
+        ]);
+
+        $emoji->name = $request->input('name');
+        $emoji->image = $request->input('image');
+        $emoji->save();
+
+        $session = $request->session()->flash('message', 'Emoji added successfully!');
+
+        return redirect()->route('admin.emojis.index');
     }
 
     /**
@@ -94,6 +127,11 @@ class EmojiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $emoji = Emoji::findOrFail($id);
+        $emoji->delete();
+
+        Session::flash('message', 'Emoji deleted successfully');
+
+        return redirect()->route('admin.emojis.index');
     }
 }

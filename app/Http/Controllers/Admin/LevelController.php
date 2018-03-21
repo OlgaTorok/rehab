@@ -50,16 +50,16 @@ class LevelController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-              'name' => 'required|max:191'
-          ]);
+            'name' => 'required|max:191'
+        ]);
 
-          $level = new Level();
-          $level->name = $request->input('name');
-          $level->save();
+        $level = new Level();
+        $level->name = $request->input('name');
+        $level->save();
 
-          $session = $request->session()->flash('message', 'Level added successfully!');
+        $session = $request->session()->flash('message', 'Level added successfully!');
 
-          return redirect()->route('admin.levels.index');
+        return redirect()->route('admin.levels.index');
     }
 
     /**

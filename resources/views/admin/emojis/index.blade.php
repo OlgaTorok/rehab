@@ -22,12 +22,14 @@
                         <table class = "table table-hover table-responsive">
                             <thead>
                                 <th>Emoji Name</th>
+                                <th>EmojiImage</th>
                             </thead>
 
                             <tbody>
                                 @foreach ($emojis as $emoji)
                                     <tr>
                                         <td>{{ $emoji->name }}</td>
+                                        <td>{{ $emoji->image }}</td>
                                         <td>
                                             <a href="{{ route('admin.emojis.edit', array('emoji' => $emoji)) }}"
                                                    class="btn btn-primary">Edit</a>
