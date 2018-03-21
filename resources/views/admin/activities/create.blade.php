@@ -77,16 +77,9 @@
                             <label for="emoji_id">Emoji ID</label>
                             <input type="text" class="form-control" id="emoji_id" name="emoji_id" value="{{ old('emoji_id') }}" />
                         </div>
-
-                        <!-- <div class="form-group">
-                            <label for="user_id">User ID</label>
-                            <input type="text" class="form-control" id="user_id" name="user_id" value="{{ old('user_id') }}" />
-                        </div> -->
-
                         <a href="{{ route('admin.activities.index') }}" class="btn btn-default">Cancel</a>
                         <!-- <a href="{{ route('admin.steps.create') }}" class="btn btn-default">Add Steps</a> -->
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
-
                     </form>
 
                 </div>

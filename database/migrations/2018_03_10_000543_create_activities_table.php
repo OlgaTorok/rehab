@@ -16,8 +16,8 @@ class CreateActivitiesTable extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->increments('id')->unsigned(); // kh
             $table->string('title');
-            $table->string('description');
-            $table->string('short_descript');
+            $table->string('description', 255);
+            $table->string('short_descript', 255);
             $table->string('picture')->nullable($value = true);
             $table->integer('tip_id')->unsigned();  // kh
             $table->integer('level_id')->unsigned();

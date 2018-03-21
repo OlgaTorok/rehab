@@ -22,7 +22,7 @@
                     <form method="POST" action="{{ route('admin.categories.store') }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="cat_name">Name</label>
                             <input type="text" class="form-control" id="cat_name" name="cat_name" value="{{ old('cat_name') }}" />
                         </div>
                         <a href="{{ route('admin.categories.index') }}" class="btn btn-default">Cancel</a>

@@ -21,13 +21,15 @@
                         @else
                         <table class = "table table-hover table-responsive">
                             <thead>
-                                <th>Emoji Name</th>
-                                <th>EmojiImage</th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Image</th>
                             </thead>
 
                             <tbody>
                                 @foreach ($emojis as $emoji)
                                     <tr>
+                                        <td>{{ $emoji->id }}</td>
                                         <td>{{ $emoji->name }}</td>
                                         <td>{{ $emoji->image }}</td>
                                         <td>

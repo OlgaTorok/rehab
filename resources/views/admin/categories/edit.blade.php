@@ -25,7 +25,7 @@
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
-                            <label for="cat_name">Category Name</label>
+                            <label for="cat_name">Name</label>
                             <input type="text" class="form-control" id="cat_name" name="cat_name" value="{{ old('cat_name', $category->cat_name) }}" />
                         </div>
                         <a href="{{ route('admin.categories.index') }}" class="btn btn-default">Cancel</a>

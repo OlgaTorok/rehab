@@ -55,7 +55,6 @@ class CategoryController extends Controller
 
         $category = new Category();
         $category->cat_name = $request->input('cat_name');
-
         $category->save();
 
         $session = $request->session()->flash('message', 'Category added successfully!');

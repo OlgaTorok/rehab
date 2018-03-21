@@ -31,14 +31,14 @@
                             <label for="email">Email</label>
                             <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" />
                         </div>
-
+                        <!-- Change boolean to string true/false or yes/no -->
                         <div class="form-group">
-                            <label for="is_admin">Admin</label>
+                            <label for="is_admin">Admin (True is 1, False is 0)</label>
                             <input type="text" class="form-control" id="is_admin" name="is_admin" value="{{ old('is_admin') }}" />
                         </div>
 
                         <div class="form-group">
-                            <label for="consent">Consent</label>
+                            <label for="consent">Consent (True is 1, False is 0)</label>
                             <input type="text" class="form-control" id="consent" name="consent" value="{{ old('consent') }}" />
                         </div>
 

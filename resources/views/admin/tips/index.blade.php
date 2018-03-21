@@ -21,7 +21,7 @@
                     @else
                     <table class = "table table-hover table-responsive">
                         <thead>
-                            <th>Tip Name</th>
+                            <th>Name</th>
                             <th>Description</th>
                         </thead>
 
@@ -31,13 +31,14 @@
                                 <td>{{ $tips->name }}</td>
                                 <th>{{ $tips->description }}</th>
                                 <td>
-                                    <a href="{{ route('admin.tips.edit', array('tips' => $tips)) }}"
+                                    <a href="{{ route('admin.tips.show', array('tips' => $tips)) }}" class="btn btn-default">View</a>
+                                    <!-- <a href="{{ route('admin.tips.edit', array('tips' => $tips)) }}"
                                            class="btn btn-primary">Edit</a>
                                     <form style="display:inline-block" method="POST" action="{{ route('admin.tips.destroy', array('tips' => $tips)) }}">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <button type="submit" class="form-control btn btn-danger">Delete</a>
-                                    </form>
+                                    </form> -->
                                 </td>
                             </tr>
                         @endforeach

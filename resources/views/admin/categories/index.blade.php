@@ -24,7 +24,8 @@
                         @else
                         <table class = "table table-hover table-responsive">
                             <thead>
-                                <th>Category</th>
+                                <th>ID</th>
+                                <th>Name</th>
                             </thead>
 
                             <tbody>

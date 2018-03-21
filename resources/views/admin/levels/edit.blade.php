@@ -25,7 +25,7 @@
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
-                            <label for="name">Level Name</label>
+                            <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $level->name) }}" />
                         </div>
                         <a href="{{ route('admin.levels.index') }}" class="btn btn-default">Cancel</a>

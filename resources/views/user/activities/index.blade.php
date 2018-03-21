@@ -16,7 +16,6 @@
         @if (Auth::user()->activities()->where('category_id', $category->id)->get()->count() > 0)
         <div class="row">
             <div class="col-12">
-                <!-- Add the category name here - OT -->
                 <h2 class="heading">{{ $category->cat_name}}</h2>
                 <hr />
             </div>
@@ -44,53 +43,29 @@
     @endforeach
 
     <hr>
-    <!--Footer-->
     <footer class="page-footer font-small pt-4 mt-4 indigo lighten-1">
-        <!--Footer Links-->
         <div class="container-fluid text-center text-md-left">
             <div class="row">
-                <!--First column-->
                 <div class="col-md-6">
                     <h5 class="text-uppercase">National Rehabilitation Hospital</h5>
                     <p>Here you can use rows and columns here to organize your footer content.</p>
-                </div>
-                <!--/.First column-->
-                <!--Second column-->
+                </div><!--/.First column-->
                 <div class="col-md-6">
                     <h5 class="text-uppercase">Links</h5>
                     <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
-                        </li>
+                        <li><a href="#!">Link 1</a></li>
+                        <li><a href="#!">Link 2</a></li>
+                        <li><a href="#!">Link 3</a></li>
+                        <li><a href="#!">Link 4</a></li>
                     </ul>
-                </div>
-                <!--/.Second column-->
+                </div><!--/.Second column-->
             </div>
-        </div>
-        <!--/.Footer Links-->
-
-        <!--Copyright-->
+        </div><!--/.Footer Links-->
         <div class="footer-copyright py-3 text-center indigo">
             © 2018 Copyright:
             <a href="https://mdbootstrap.com/material-design-for-bootstrap/"> NRH </a>
-        </div>
-        <!--/.Copyright-->
-
+        </div><!--/.Copyright-->
     </footer>
-    <!--/.Footer-->
-    <!-- Site footer -->
-    <!-- <footer class="footer">
-        <p>&copy; 2018, NRH</p>
-    </footer> -->
 </div> <!-- /container -->
 
 

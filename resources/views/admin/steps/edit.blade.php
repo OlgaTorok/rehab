@@ -32,18 +32,7 @@
                              <label for="description">Description</label>
                              <input type="text" class="form-control" id="description" name="description" value="{{ old('description', $step->description) }}" />
                         </div>
-
-                         <!-- <div class="form-group">
-                                <label for="steps-content">Description</label>
-                                <textarea placeholder="{{ old('description', $step->description) }}"
-                                          style="resize: vertical"
-                                          id="description-content"
-                                          name="description"
-                                          rows="10" spellcheck="false"
-                                          class="form-control autosize-target text-left">
-                                </textarea>
-                            </div> -->
-                        
+                        <!-- OT - tip->description here -->
                         <div class="form-group">
                             <label for="tip_id">Tip ID</label>
                             <input type="text" class="form-control" id="tip_id" name="tip_id" value="{{ old('tip_id', $step->tip_id) }}" />

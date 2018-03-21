@@ -24,7 +24,7 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                        <div class="form-group">
-                            <label for="name">Tip_Name</label>
+                            <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $tip->name) }}" />
                         </div>
 

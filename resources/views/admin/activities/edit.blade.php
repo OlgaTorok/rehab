@@ -66,15 +66,11 @@
                             <label for="rating_id">Rating ID</label>
                             <input type="text" class="form-control" id="rating_id" name="rating_id" value="{{ old('rating_id', $activity->rating_id) }}" />
                         </div>
+                        <!-- OT - change to emoji->name -->
                         <div class="form-group">
                             <label for="emoji_id">Emoji ID</label>
                             <input type="text" class="form-control" id="emoji_id" name="emoji_id" value="{{ old('emoji_id', $activity->emoji_id) }}" />
                         </div>
-
-                        <!-- <div class="form-group">
-                            <label for="user_id">User ID</label>
-                            <input type="text" class="form-control" id="user_id" name="user_id" value="{{ old('user_id', $activity->user_id) }}" />
-                        </div> -->
 
                         <a href="{{ route('admin.activities.index') }}" class="btn btn-default">Cancel</a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>

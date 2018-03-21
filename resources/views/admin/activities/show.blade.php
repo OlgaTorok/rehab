@@ -49,10 +49,6 @@
                                 <td>Emoji ID</td>
                                 <td>{{ $activity->emoji_id }}</td>
                             </tr>
-                            <!-- <tr>
-                                <td>User ID</td>
-                                <td>{{ $activity->user_id }}</td>
-                            </tr> -->
                         </tbody>
                     </table>
 

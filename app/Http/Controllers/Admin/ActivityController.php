@@ -50,15 +50,14 @@ class ActivityController extends Controller
     {
         $request->validate([
            'title' => 'required|max:191',
-           'description' => 'required|max:191',
-           'short_descript' => 'required|max:191',
+           'description' => 'required',
+           'short_descript' => 'required',
            'picture' => 'required|max:191',
            'tip_id' => 'required|integer|min:0',
            'level_id' => 'required|integer|min:0',
            'category_id' => 'required|integer|min:0',
            'rating_id' => 'required|integer|min:0',
            'emoji_id' => 'required|integer|min:0',
-           // 'user_id' => 'required|integer|min:0'
        ]);
 
        $activity = new Activity();
@@ -71,7 +70,6 @@ class ActivityController extends Controller
        $activity->category_id = $request->input('category_id');
        $activity->rating_id = $request->input('rating_id');
        $activity->emoji_id = $request->input('emoji_id');
-       // $activity->user_id = $request->input('user_id');
        $activity->save();
 
        $session = $request->session()->flash('message', 'Activity added successfully!');
@@ -122,15 +120,14 @@ class ActivityController extends Controller
 
         $request->validate([
             'title' => 'required|max:191',
-            'description' => 'required|max:191',
-            'short_descript' => 'required|max:191',
+            'description' => 'required',
+            'short_descript' => 'required',
             'picture' => 'required|max:191',
             'tip_id' => 'required|integer|min:0',
             'level_id' => 'required|integer|min:0',
             'category_id' => 'required|integer|min:0',
             'rating_id' => 'required|integer|min:0',
             'emoji_id' => 'required|integer|min:0',
-            // 'user_id' => 'required|integer|min:0'
         ]);
 
         $activity->title = $request->input('title');
@@ -142,7 +139,6 @@ class ActivityController extends Controller
         $activity->category_id = $request->input('category_id');
         $activity->rating_id = $request->input('rating_id');
         $activity->emoji_id = $request->input('emoji_id');
-        // $activity->user_id = $request->input('user_id');
         $activity->save();
 
         $session = $request->session()->flash('message', 'Activity updated successfully!');
