@@ -49,6 +49,31 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <button type="submit" class="form-control btn btn-danger">Delete</a>
                     </form>
+                    <h3>Activities</h3>
+                    @if (count($user->activities) == 0)
+                    <p>There are no Activities for this User</p>
+                    @else
+                    <table class="table">
+                        <tbody>
+                        @foreach ($user->activities as $activity)
+                            <tr>
+                                <td>{{ $activity->title }}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                    @endif
+                    <a href="{{ route('admin.users.activities_create', $user->id) }}" class="btn btn-primary">Edit Activity</a>
+
+
+                </div>  <!-- panel-body -->
+
+
+            </div>  <!-- panel -->
+        </div>  <!-- col-md-8 col-md-offset-2 -->
+    </div>  <!-- row -->
+</div>  <!-- container -->
+@endsection
                 </div>
             </div>
         </div>

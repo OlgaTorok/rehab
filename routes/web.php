@@ -48,6 +48,8 @@ Route::post  ('/admin/users/store',     'Admin\UserController@store'  )->name('a
 Route::get   ('/admin/users/{id}/edit', 'Admin\UserController@edit'   )->name('admin.users.edit');
 Route::put   ('/admin/users/{id}',      'Admin\UserController@update' )->name('admin.users.update');
 Route::delete('/admin/users/{id}',      'Admin\UserController@destroy')->name('admin.users.destroy');
+Route::get   ('/admin/users/{id}/activities/create',      'Admin\UserController@activities_create'   )->name('admin.activities.activities_create');
+Route::post  ('/admin/users/{id}/activities/store',       'Admin\UserController@activities_store'  )->name('admin.activities.activities_store');
 
 //Activities
 Route::get   ('/admin/activities/',          'Admin\ActivityController@index'  )->name('admin.activities.index');
