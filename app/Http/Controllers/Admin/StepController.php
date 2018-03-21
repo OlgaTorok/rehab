@@ -7,15 +7,10 @@ use Illuminate\Support\Facades\Session;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\Step;
-use App\Tip;
+
 
 class StepController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('role:admin');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -51,15 +46,15 @@ class StepController extends Controller
         $request->validate([
             'title' => 'required|max:191',
             'description' => 'required|max:191',
-            'tip_id' => 'required|integer|min:0',
-            // 'picture' => 'required|max:191'
+            'tip' => 'required|max:191',
+            'picture' => 'required|max:191'
         ]);
 
         $step = new Step();
         $step->title = $request->input('title');
         $step->description = $request->input('description');
-        $step->tip_id = $request->input('tip_id');
-        // $step->picture = $request->input('picture');
+        $step->tip = $request->input('tip');
+        $step->picture = $request->input('picture');
         $step->save();
 
         $session = $request->session()->flash('message', 'Step added successfully!');
@@ -75,14 +70,11 @@ class StepController extends Controller
      */
     public function show($id)
     {
-      $tips = Tip::all();
+        $step = Step::findOrFail($id);
 
-      $params = array(
-          'tips' => $tips,
-          
-      );
-      return view('admin.activities.create')->with($params);
-
+        return view('admin.steps.show')->with(array(
+            'step' => $step
+        ));
     }
 
     /**
@@ -114,14 +106,14 @@ class StepController extends Controller
         $request->validate([
             'title' => 'required|max:191',
             'description' => 'required|max:191',
-            'tip_id' => 'required|integer|min:0',
-            // 'picture' => 'required|max:191'
+            'tip' => 'required|max:191',
+            'picture' => 'required|max:191'
         ]);
 
         $step->title = $request->input('title');
         $step->description = $request->input('description');
-        $step->tip_id = $request->input('tip_id');
-        // $step->picture = $request->input('picture');
+        $step->tip = $request->input('tip');
+        $step->picture = $request->input('picture');
         $step->save();
 
         $session = $request->session()->flash('message', 'Step updated successfully!');

@@ -24,15 +24,14 @@
                             </tr>
 
                             <tr>
-                                <!-- Here we add the code for the tip description -->
-                                <td>Tip ID</td>
-                                <td>{{ $step->tip_id }}</td>
+                                <td>Tip</td>
+                                <td>{{ $step->tip }}</td>
                             </tr>
 
-                            <!-- <tr>
+                            <tr>
                                 <td>Picture</td>
                                 <td>{{ $step->picture }}</td>
-                            </tr> -->
+                            </tr>
                         </tbody>
                     </table>
 
