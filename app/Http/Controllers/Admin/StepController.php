@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Session;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\Step;
+use App\Tip;
 
 class StepController extends Controller
 {
@@ -74,11 +75,14 @@ class StepController extends Controller
      */
     public function show($id)
     {
-        $step = Step::findOrFail($id);
+      $tips = Tip::all();
 
-        return view('admin.steps.show')->with(array(
-            'step' => $step
-        ));
+      $params = array(
+          'tips' => $tips,
+          
+      );
+      return view('admin.activities.create')->with($params);
+
     }
 
     /**
