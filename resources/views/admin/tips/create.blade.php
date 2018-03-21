@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3>Add Tips</h3>
@@ -19,17 +19,16 @@
                             </ul>
                         </div>
                     @endif
-
                     <form method="POST" action="{{ route('admin.tips.store') }}">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
                         </div>
 
                         <div class="form-group">
-                            <label for="description">Description</label>
+                            <label for="description">description</label>
                             <input type="text" class="form-control" id="description" name="description" value="{{ old('description') }}" />
                         </div>
 
