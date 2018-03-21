@@ -7,33 +7,29 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
 
-    public function users(){
-        return $this->belongsToMany('App\User')->withTimestamps();
-    }
-
     public function steps(){
-        return $this->belongsToMany('App\Step')->withTimestamps();
+        return $this->belongsToMany(Step::class);
     }
 
-    public function categories()
+    public function category()
     {
-        return $this->belongsTo('App\Category')->withTimestamps();
+        return $this->belongsTo('App\Category');
     }
 
-    public function levels()
+    public function level()
     {
-        return $this->belongsTo('App\Level')->withTimestamps();
+        return $this->belongsTo('App\Level');
     }
 
-    public function ratings(){
-        return $this->belongsTo('App\Rating')->withTimestamps();
+    public function rating(){
+        return $this->belongsTo('App\Rating');
     }
 
-    public function emojis(){
-        return $this->belongsTo('App\Emoji')->withTimestamps();
+    public function emoji(){
+        return $this->belongsTo('App\Emoji');
     }
 
-    public function tips(){
-        return $this->belongsTo('App\Tip')->withTimestamps();
+    public function tip(){
+        return $this->belongsToMany('App\Tip');
     }
 }

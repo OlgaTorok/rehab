@@ -7,6 +7,12 @@ use Illuminate\Support\Facades\Session;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\Activity;
+use App\Tip;
+use App\Category;
+use App\Level;
+use App\Rating;
+use App\Emoji;
+use App\Step;
 
 class ActivityController extends Controller
 {
@@ -37,7 +43,20 @@ class ActivityController extends Controller
      */
     public function create()
     {
-        return view('admin.activities.create');
+
+        $tips = Tip::all();
+        $cateogories = Category::all();
+        $levels = Level::all();
+        $ratings = Rating::all();
+        $emojis = Emoji::all();
+        $params = array(
+            'tips' => $tips,
+            'categories' => $cateogories,
+            'levels' => $levels,
+            'ratings' => $ratings,
+            'emojis' => $emojis
+        );
+        return view('admin.activities.create')->with($params);
     }
 
     /**
@@ -162,4 +181,42 @@ class ActivityController extends Controller
 
         return redirect()->route('admin.activity.index');
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function steps_create($id)
+    {
+        $activity = Activity::findOrFail($id);
+        $steps = Step::all();
+
+        return view('admin.activities.steps.create')->with(array(
+            'activity' => $activity,
+            'steps' => $steps
+        ));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function steps_store(Request $request, $id)
+    {
+        $request->validate([
+            'steps' => 'required'
+        ]);
+
+        $activity = Activity::find($id);
+        $activity->steps()->sync($request->input('steps'));
+
+        $session = $request->session()->flash('message', 'Activity steps stored successfully!');
+
+        return redirect()->route('admin.activities.show', $id);
+    }
+
+
 }

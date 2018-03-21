@@ -3,10 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3>Add Tips</h3>
+                    <h3>Edit Steps for Activity: {{ $activity->title }}</h3>
                 </div>
 
                 <div class="panel-body">
@@ -19,21 +19,21 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('admin.tips.store') }}">
-
+                    <form method="POST" action="{{ route('admin.activities.steps_store', $activity->id) }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
-                        </div>
+                        
+                        @foreach ($steps as $step) 
+                            <input type="checkbox" 
+                                   name="steps[]" 
+                                   value="{{ $step->id }}" 
+                                   id="step_{{ $step->id }}" 
+                                   {{ ($activity->steps->contains($step))?"checked":"" }}
+                                   />
+                            <label for="step_{{ $step->id }}">{{ $step->title }}</label>
+                        @endforeach
 
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <input type="text" class="form-control" id="description" name="description" value="{{ old('description') }}" />
-                        </div>
-
-                        <a href="{{ route('admin.tips.index') }}" class="btn btn-default">Cancel</a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
+
                     </form>
                 </div>
             </div>

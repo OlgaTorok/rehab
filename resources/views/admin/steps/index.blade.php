@@ -23,7 +23,7 @@
                             <thead>
                                 <th>Title</th>
                                 <th>Description</th>
-                                <th>Tip ID</th>
+                                <th>Tip Name</th>
                                 <!-- <th>Picture</th> -->
                                 <th>Action</th>
                             </thead>
@@ -34,7 +34,7 @@
                                         <td>{{ $step->description }}</td>
                                         <!-- Here we add the code for the tip description -->
                                         <td>{{ $step->tip_id }}</td>
-                                        <!-- <td>{{ $step->picture }}</td> -->
+
                                         <td>
                                             <a href="{{ route('admin.steps.show', array('step' => $step)) }}" class="btn btn-default">View</a>
                                             <!-- <a href="{{ route('admin.steps.edit', array('step' => $step)) }}" class="btn btn-warning">Edit</a>

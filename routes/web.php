@@ -57,6 +57,8 @@ Route::post  ('/admin/activities/store',     'Admin\ActivityController@store'  )
 Route::get   ('/admin/activities/{id}/edit', 'Admin\ActivityController@edit'   )->name('admin.activities.edit');
 Route::put   ('/admin/activities/{id}',      'Admin\ActivityController@update' )->name('admin.activities.update');
 Route::delete('/admin/activities/{id}',      'Admin\ActivityController@destroy')->name('admin.activities.destroy');
+Route::get   ('/admin/activities/{id}/steps/create',      'Admin\ActivityController@steps_create'   )->name('admin.activities.steps_create');
+Route::post  ('/admin/activities/{id}/steps/store',       'Admin\ActivityController@steps_store'  )->name('admin.activities.steps_store');
 
 //Steps
 Route::get   ('/admin/steps/',          'Admin\StepController@index'  )->name('admin.steps.index');
