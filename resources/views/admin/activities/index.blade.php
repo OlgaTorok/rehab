@@ -24,8 +24,8 @@
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Short Description</th>
-                                <th>Picture</th>
                                 <th>Tip</th>
+                                <th>Picture</th>
                                 <th>Level</th>
                                 <th>Category</th>
                                 <th>Rating</th>
@@ -38,14 +38,16 @@
                                         <td>{{ $activity->title }}</td>
                                         <td>{{ $activity->description }}</td>
                                         <td>{{ $activity->short_descript }}</td>
-                                        <td>{{ $activity->picture }}</td>
                                         <td>{{ $activity->tip_id }}</td>
-                                        <td>{{ $activity->level_id }}</td>
-                                        <td>{{ $activity->category_id }}</td>
-                                        <td>{{ $activity->rating_id }}</td>
+                                        <td>{{ $activity->picture }}</td>
+                                        <td>{{ $activity->level->name }}</td>
+                                        <td>{{ $activity->category->cat_name }}</td>
+                                        <td>{{ $activity->rating->name }}</td>
                                         <td>{{ $activity->emoji_id }}</td>
+
                                         <td>
-                                            <a href="{{ route('admin.activities.show', array('activity' => $activity)) }}" class="btn btn-default">View</a>
+                                            <a href="{{ route('admin.activities.show', array('activity' => $activity)) }}"
+                                                class="btn btn-default">View</a>
                                        </td>
                                     </tr>
                                 @endforeach

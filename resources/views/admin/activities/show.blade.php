@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('content')
 
+@section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Activity: {{ $activity->title }}
@@ -26,45 +26,58 @@
                                 <td>{{ $activity->short_descript }}</td>
                             </tr>
                             <tr>
+                                <td>Tip</td>
+                                <td>{{ $activity->tip_id }}</td>
+                            </tr>
+                            <tr>
                                 <td>Picture</td>
                                 <td>{{ $activity->picture }}</td>
                             </tr>
                             <tr>
-                                <td>Tip ID</td>
-                                <td>{{ $activity->tip_id }}</td>
-                            </tr>
-                            <tr>
-                                <td>Level ID></td>
-                                <td>{{ $activity->level_id }}</td>
+                                <td>Level ID</td>
+                                <td>{{ $activity->level->name }}</td>
                             </tr>
                             <tr>
                                 <td>Category ID</td>
-                                <td>{{ $activity->category_id }}</td>
+                                <td>{{ $activity->category->cat_name }}</td>
                             </tr>
                             <tr>
                                 <td>Rating ID</td>
-                                <td>{{ $activity->rating_id }}</td>
+                                <td>{{ $activity->rating->name }}</td>
                             </tr>
                             <tr>
                                 <td>Emoji ID</td>
                                 <td>{{ $activity->emoji_id }}</td>
                             </tr>
-                            <!-- <tr>
-                                <td>User ID</td>
-                                <td>{{ $activity->user_id }}</td>
-                            </tr> -->
                         </tbody>
                     </table>
 
-
                     <a href="{{ route('admin.activities.index') }}" class="btn btn-default">Back</a>
                     <a href="{{ route('admin.activities.edit', array('activity' => $activity)) }}"
-                       class="btn btn-primary">Edit</a>
+                       class="btn btn-warning">Edit</a>
                     <form style="display:inline-block" method="POST" action="{{ route('admin.activities.destroy', array('activity' => $activity)) }}">
                            <input type="hidden" name="_method" value="DELETE">
                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                            <a type="submit" class="form-control btn btn-danger">Delete</a>
                     </form>
+
+                    <h3>Steps</h3>
+                    @if (count($activity->steps) == 0)
+                    <p>There are no steps for this activity</p>
+                    @else
+                    <table class="table">
+                        <tbody>
+                        @foreach ($activity->steps as $step)
+                            <tr>
+                                <td>{{ $step->title }}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                    @endif
+                    <a href="{{ route('admin.activities.steps_create', $activity->id) }}" class="btn btn-primary">Edit steps</a>
+
+
                 </div>  <!-- panel-body -->
 
 

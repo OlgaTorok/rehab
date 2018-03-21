@@ -54,6 +54,7 @@
                             <label for="tip_id">Tip ID</label>
                             <input type="text" class="form-control" id="tip_id" name="tip_id" value="{{ old('tip_id', $activity->tip_id) }}" />
                         </div>
+
                         <div class="form-group">
                             <label for="level_id">Level ID</label>
                             <input type="text" class="form-control" id="level_id" name="level_id" value="{{ old('level_id', $activity->level_id) }}" />
@@ -71,10 +72,6 @@
                             <input type="text" class="form-control" id="emoji_id" name="emoji_id" value="{{ old('emoji_id', $activity->emoji_id) }}" />
                         </div>
 
-                        <!-- <div class="form-group">
-                            <label for="user_id">User ID</label>
-                            <input type="text" class="form-control" id="user_id" name="user_id" value="{{ old('user_id', $activity->user_id) }}" />
-                        </div> -->
 
                         <a href="{{ route('admin.activities.index') }}" class="btn btn-default">Cancel</a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
