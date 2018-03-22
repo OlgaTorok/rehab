@@ -40,24 +40,28 @@
 
                        <div class="form-group">
                             <label for="tip_id">Tip</label>
-                            <input type="text" class="form-control" id="tip_id" name="tip_id" value="{{ old('tip_id') }}" />
+                            <input type="text" class="form-control" id="tip_id" name="tip_id" value="{{ $activity[0]->tip_id }}" />
                         </div>
 
                         <div class="form-group">
+                           <label for="level_id">Level </label>
+                           <input type="text" class="form-control" id="level_id" name="level_id" value="{{  $activity[0]->level_id }}" />
+                       </div>
+
+                        <div class="form-group">
                             <label for="category_id">Category</label>
-                            <input type="text" class="form-control" id="category_id" name="category_id" value="{{ old('category_id') }}" />
+                            <input type="text" class="form-control" id="category_id" name="category_id" value="{{ $activity[0]->category_id }}" />
                         </div>
 
                        <div class="form-group">
                             <label for="rating_id">Rating</label>
-                            <input type="text" class="form-control" id="rating_id" name="rating_id" value="{{ old('rating_id') }}" />
+                            <input type="text" class="form-control" id="rating_id" name="rating_id" value="{{ $activity[0]->rating_id }}" />
                         </div>
 
                         <div class="form-group">
                             <label for="emoji_id">Emoji Id</label>
-                            <input type="text" class="form-control" id="emoji_id" name="emoji_id" value="{{ old('emoji_id') }}" />
+                            <input type="text" class="form-control" id="emoji_id" name="emoji_id" value="{{ $activity[0]->emoji_id }}" />
                         </div>
-
 
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
                     </form>
