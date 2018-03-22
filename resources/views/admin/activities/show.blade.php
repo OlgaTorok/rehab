@@ -72,12 +72,13 @@
                         @foreach ($activity->steps as $step)
                             <tr>
                                 <td>{{ $step->title }}</td>
+                                <td>{{ $step->description }}</td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
                     @endif
-                    <a href="{{ route('admin.activities.steps_create', $activity->id) }}" class="btn btn-primary">Edit steps</a>
+                    <a href="{{ route('admin.activities.steps_create', $activity->id) }}" class="btn btn-primary">Add steps</a>
 
 
                 </div>  <!-- panel-body -->
