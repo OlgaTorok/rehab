@@ -25,19 +25,19 @@
     @foreach ($categories as $category)
         @if (Auth::user()->activities()->where('category_id', $category->id)->get()->count() > 0)
         <div class="row">
-            <div class="col-12">
+            <div class="col-md-12">
                 <h2 class="heading">{{ $category->cat_name}}</h2>
                 <hr />
             </div>
         </div><!-- end row -->
         <div class="row">
-            <div class="col-12">
+            <div class="col-md-12">
 
                 @foreach(Auth::user()->activities()->where('category_id', $category->id)->get() as $activity)
                 <!-- ******************** CARDS ************************ -->
                     @if ($activity->category_id == $category->id)
                     <div class="col-3 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card">
+                        <div class="card card-menu">
                             <img class="card-img-top" src="{{ url('../public/img/beach.png') }}" alt="Card image cap" style="width: 100%" />
                             <!-- <div class="content">
                                 <div class="rect">2 min</div>
@@ -51,10 +51,12 @@
                             <div class="card-body" style="padding: 10px;">
                                 <h3 class="card-title">{{ $activity->title }}</h3>
                                 <p class="card-text">{{ $activity->short_descript }}</p>
+                                <p class="card-text"><b>Level: </b> {{ $activity->level->name }}</p>
                                 <a href="{{ route('user.activities.show', $activity->id) }}" class="btn btn-primary">Go</a>
                             </div>  <!-- end card-body -->
                         </div>  <!-- end col-3 -->
-                    </div>
+
+                    </div>  <!-- end col-3 col-sm-6 col-md-4 col-lg-3 -->
                     @endif
                 @endforeach
             </div><!-- End col-8 -->

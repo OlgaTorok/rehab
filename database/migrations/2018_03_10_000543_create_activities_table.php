@@ -17,7 +17,7 @@ class CreateActivitiesTable extends Migration
             $table->increments('id')->unsigned();
             $table->string('title');
             $table->string('description', 255);
-            $table->string('short_descript', 255);
+            $table->string('short_descript');
             $table->string('picture')->nullable($value = true);
             $table->integer('tip_id')->unsigned()->nullable($value = true);
             $table->integer('level_id')->unsigned();

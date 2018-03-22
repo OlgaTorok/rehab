@@ -70,7 +70,7 @@ class ActivityController extends Controller
         $request->validate([
            'title' => 'required|max:191',
            'description' => 'required',
-           'short_descript' => 'required',
+           'short_descript' => 'required|max:20',
            'picture' => 'required|max:191',
            'tip_id' => 'required|integer|min:0',
            'level_id' => 'required|integer|min:0',
@@ -140,7 +140,7 @@ class ActivityController extends Controller
         $request->validate([
             'title' => 'required|max:191',
             'description' => 'required',
-            'short_descript' => 'required',
+            'short_descript' => 'required|max:20',
             'picture' => 'required|max:191',
             'tip_id' => 'required|integer|min:0',
             'level_id' => 'required|integer|min:0',

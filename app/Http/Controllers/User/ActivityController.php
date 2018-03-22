@@ -8,6 +8,11 @@ use Validator;
 use App\Http\Controllers\Controller;
 use App\Activity;
 use App\Category;
+use App\Tip;
+use App\Level;
+use App\Rating;
+use App\Emoji;
+use App\Step;
 
 class ActivityController extends Controller
 {
@@ -25,10 +30,21 @@ class ActivityController extends Controller
     public function index()
     {
         $categories = Category::all();
+        $steps = Step::all();
+        $levels = Level::all();
+        $tips = Tip::all();
+        $ratings = Rating::all();
+        $emojis = Emoji::all();
+        $params = array(
+            'categories' => $categories,
+            'steps' => $steps,
+            'levels' => $levels,
+            'tips' => $tips,
+            'ratings' => $ratings,
+            'emojis' => $emojis
+        );
 
-       return view('user.activities.index')->with(array(
-           'categories' => $categories
-       ));
+       return view('user.activities.index')->with($params);
     }
 
     /**
