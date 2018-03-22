@@ -107,6 +107,14 @@ Route::get   ('/admin/tips/{id}/edit', 'Admin\TipController@edit'   )->name('adm
 Route::put   ('/admin/tips/{id}',      'Admin\TipController@update' )->name('admin.tips.update');
 Route::delete('/admin/tips/{id}',      'Admin\TipController@destroy')->name('admin.tips.destroy');
 
+//Ratings
+Route::get   ('/admin/ratings/',          'Admin\RatingController@index'  )->name('admin.ratings.index');
+Route::get   ('/admin/ratings/create',    'Admin\RatingController@create' )->name('admin.ratings.create');
+Route::get   ('/admin/ratings/{id}',      'Admin\RatingController@show'   )->name('admin.ratings.show');
+Route::post  ('/admin/ratings/store',     'Admin\RatingController@store'  )->name('admin.ratings.store');
+Route::get   ('/admin/ratings/{id}/edit', 'Admin\RatingController@edit'   )->name('admin.ratings.edit');
+Route::put   ('/admin/ratings/{id}',      'Admin\RatingController@update' )->name('admin.ratings.update');
+Route::delete('/admin/ratings/{id}',      'Admin\RatingController@destroy')->name('admin.ratings.destroy');
 //Image uploader
 // Route::post('upload', 'UploadController@upload');
 
