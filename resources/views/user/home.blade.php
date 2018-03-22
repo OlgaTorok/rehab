@@ -8,7 +8,7 @@
             <p class="alert alert-success">{{ Session::get('message') }}</p>
             @endif
 
-            <div class="jumbotron text-center">
+            <div class="jumbotron text-center blue-grey lighten-5">
                 <h1 class="display-4">National Rehabilitation Hospital</h1>
                 <p class="lead">The National Rehabilitation Hospital (NRH) provides a
                     comprehensive range of specialist rehabilitation services to patients

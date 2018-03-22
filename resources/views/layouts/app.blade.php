@@ -10,6 +10,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"> -->
+    <!-- Material Design Bootstrap -->
+    <!-- <link href="{{ asset('css/mdb.min.css') }}" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous"> -->
     <script src="https://use.fontawesome.com/874dbadbd7.js"></script>
 </head>
@@ -32,12 +36,12 @@
                 </div>
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav mr-auto">
                         <!-- &nbsp; -->
-                        <!-- <form class="form-inline my-2 my-lg-0">
+                        <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form> -->
+                        </form>
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -86,5 +90,12 @@
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <!-- <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script> -->
+    <!-- Bootstrap tooltips -->
+    <!-- <script src="{{ asset('js/popper.min.js') }}"></script> -->
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script src="{{ asset('js/bootstrap.min.js') }}"></script> -->
+    <!-- MDB core JavaScript -->
+    <!-- <script src="{{ asset('js/mdb.min.js') }}"></script> -->
 </body>
 </html>

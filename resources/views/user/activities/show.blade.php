@@ -16,12 +16,12 @@
         <div class="col-md-9">
             <div class="card" style="margin-bottom: 30px; padding: 20px; box-shadow: 2px 5px 8px #dadddf">
                 <!--Card image-->
-                <div class="view overlay">
+                <!-- <div class="view overlay">
                     <img class="card-img-top" src="{{ url('../public/img/robot.png') }}" alt="Card image cap" style="width: 50%" />
                     <a>
                         <div class="mask rgba-white-slight"></div>
                     </a>
-                </div>
+                </div> -->
                 <!--/.Card image-->
                 <!--Card content-->
                 <div class="card-body elegant-color white-text">
@@ -40,7 +40,7 @@
                         <hr />
                         <p class="card-text"><b>Level: </b> {{ $activity->level_id }}</p>
                         <hr />
-                        <p class="card-text"><p><b>Steps:</b>{{ $activity->step_id }}</p></p>
+                        <p class="card-text"><b>Steps:</b>{{ $activity->step_id }}</p>
                         <hr />
                         <p class="card-text">
                             <p style="text-align: center;"><b>How did the activity go?</b></p>
@@ -55,6 +55,8 @@
                     <hr class="hr-light">
                 </div>  <!--/.Card content-->
             </div>  <!--/.Card -->
+
+
 
         </div>  <!-- End col-md-9 -->
 

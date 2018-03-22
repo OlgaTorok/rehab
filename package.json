@@ -19,6 +19,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "bootstrap-material-design": "^4.1.1"
+        "bootstrap-material-design": "^4.1.1",
+        "mdbootstrap": "^4.5.0"
     }
 }
