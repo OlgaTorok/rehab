@@ -24,7 +24,11 @@ class RatingController extends Controller
      */
     public function index()
     {
-        //
+      $ratings = Rating::all();
+
+       return view('admin.ratings.index')->with(array(
+           'rating' => $ratings
+       ));
     }
 
     /**
@@ -34,7 +38,7 @@ class RatingController extends Controller
      */
     public function create()
     {
-        //
+          return view('admin.ratings.create');
     }
 
     /**
@@ -45,7 +49,18 @@ class RatingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $request->validate([
+          'name' => 'required|max:191',
+
+        ]);
+
+        $rating = new Rating();
+        $rating->name = $request->input('name');
+
+        $rating->save();
+        $session = $request->session()->flash('message', 'Rating added successfully!');
+
+        return redirect()->route('admin.ratings.index');
     }
 
     /**
@@ -56,7 +71,11 @@ class RatingController extends Controller
      */
     public function show($id)
     {
-        //
+      $rating = Rating::findOrFail($id);
+
+      return view('admin.ratings.show')->with(array(
+          'rating' => $rating
+      ));
     }
 
     /**
@@ -67,7 +86,11 @@ class RatingController extends Controller
      */
     public function edit($id)
     {
-        //
+      $rating = Rating::findOrFail($id);
+
+      return view('admin.ratings.edit')->with(array(
+          'rating' => $rating
+      ));
     }
 
     /**
@@ -79,7 +102,19 @@ class RatingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $rating = Rating::findOrFail($id);
+
+      $request->validate([
+          'name' => 'required|max:191'
+
+      ]);
+
+      $rating->name = $request->input('name');
+      $rating->save();
+      $session = $request->session()->flash('message', 'Rating added successfully!');
+
+      return redirect()->route('admin.ratings.index');
+
     }
 
     /**
@@ -90,6 +125,11 @@ class RatingController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $rating = Rating::findOrFail($id);
+      $rating->delete();
+
+      Session::flash('message', 'Rating deleted successfully');
+
+      return redirect()->route('admin.ratings.index');
     }
 }
