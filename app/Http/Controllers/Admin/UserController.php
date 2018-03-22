@@ -1,13 +1,11 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\User;
-
+use App\Activity;
 class UserController extends Controller
 {
     /**
@@ -22,7 +20,6 @@ class UserController extends Controller
             'user' => $users
         ));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +29,6 @@ class UserController extends Controller
     {
         return view('admin.users.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -42,28 +38,22 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-
             'name' => 'required|max:191',
             'email' => 'required|max:191',
             'password' => 'required|max:191',
             'is_admin' => 'required|boolean',
             'consent' => 'required|boolean'
         ]);
-
         $user = new User();
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = $request->input('password');
         $user->is_admin = $request->input('is_admin');
         $user->consent = $request->input('consent');
-
         $user->save();
-
         $session = $request->session()->flash('message', 'User added successfully!');
-
         return redirect()->route('admin.users.index');
     }
-
     /**
      * Display the specified resource.
      *
@@ -77,7 +67,6 @@ class UserController extends Controller
             'user'=> $users
         ));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -91,7 +80,6 @@ class UserController extends Controller
                     'user' => $users
                 ));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -102,29 +90,22 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
       $user = User::findOrFail($id);
-
         $request->validate([
-
             'name' => 'required|max:191',
             'email' => 'required|max:191',
             'password' => 'required|max:191',
             'is_admin' => 'required|boolean',
             'consent' => 'required|boolean'
         ]);
-
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = $request->input('password');
         $user->is_admin = $request->input('is_admin');
         $user->consent = $request->input('consent');
-
         $user->save();
-
         $session = $request->session()->flash('message', 'User added successfully!');
-
         return redirect()->route('admin.users.index');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -135,8 +116,37 @@ class UserController extends Controller
     {
         $users = User::findOrFail($id);
         $users->delete();
-
         $request->session()->flash('message', 'User Deleted sucessfully');
         return redirect()->route('admin.users.index');
     }
-}
+    /**
+         * Show the form for creating a new resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function activities_create($id)
+        {
+            $users = User::findOrFail($id);
+            $activities = Activity::all();
+            return view('admin.users.activities.create')->with(array(
+                'user' => $user,
+                'activity' => $activity
+            ));
+        }
+        /**
+         * Store a newly created resource in storage.
+         *
+         * @param  \Illuminate\Http\Request  $request
+         * @return \Illuminate\Http\Response
+         */
+        public function activities_store(Request $request, $id)
+        {
+            $request->validate([
+                'activity' => 'required'
+            ]);
+            $user = User::find($id);
+            $user->activity()->sync($request->input('activity'));
+            $session = $request->session()->flash('message', 'User activities stored successfully!');
+            return redirect()->route('admin.users.show', $id);
+        }
+    }

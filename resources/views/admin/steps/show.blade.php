@@ -28,10 +28,10 @@
                                 <td>{{ $step->tip }}</td>
                             </tr>
 
-                            <tr>
+                            <!-- <tr>
                                 <td>Picture</td>
                                 <td>{{ $step->picture }}</td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
 
@@ -45,7 +45,7 @@
                     </form>
                 </div>
 
-                
+
             </div>
         </div>
     </div>
