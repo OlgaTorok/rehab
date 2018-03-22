@@ -38,12 +38,12 @@
                                         <td>{{ $activity->title }}</td>
                                         <td>{{ $activity->description }}</td>
                                         <td>{{ $activity->short_descript }}</td>
-                                        <td>{{ $activity->tip_id }}</td>
+                                        <td>{{ $activity->tip->name }}</td>
                                         <td>{{ $activity->picture }}</td>
                                         <td>{{ $activity->level->name }}</td>
                                         <td>{{ $activity->category->cat_name }}</td>
                                         <td>{{ $activity->rating->name }}</td>
-                                        <td>{{ $activity->emoji_id }}</td>
+                                        <td>{{ $activity->emoji->name}}</td>
 
                                         <td>
                                             <a href="{{ route('admin.activities.show', array('activity' => $activity)) }}"

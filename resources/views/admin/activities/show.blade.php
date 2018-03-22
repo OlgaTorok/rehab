@@ -27,11 +27,11 @@
                             </tr>
                             <tr>
                                 <td>Tip</td>
-                                <td>{{ $activity->tip_id }}</td>
+                                <td>{{ $activity->tip->name }}</td>
                             </tr>
                             <tr>
                                 <td>Picture</td>
-                                <td>{{ $activity->picture }}</td>
+                                <td>{{ $activity->picture->name }}</td>
                             </tr>
                             <tr>
                                 <td>Level ID</td>
@@ -46,14 +46,13 @@
                                 <td>{{ $activity->rating->name }}</td>
                             </tr>
                             <tr>
-                                <td>Emoji ID</td>
-                                <td>{{ $activity->emoji_id }}</td>
+                                <td>Emoji</td>
+                                <td>{{ $activity->emoji->name }}</td>
                             </tr>
                         </tbody>
                     </table>
 
                     <a href="{{ route('admin.activities.index') }}" class="btn btn-default">Back</a>
-
                     <a href="{{ route('admin.activities.edit', array('activity' => $activity)) }}"
                        class="btn btn-warning">Edit</a>
 

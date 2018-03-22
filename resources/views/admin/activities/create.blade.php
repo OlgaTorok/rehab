@@ -65,7 +65,6 @@
                             </select>
                         </div>
 
-
                         <div class="form-group">
                             <label for="rating_id">Rating</label>
                             <select class="form-control" id="rating_id" name="rating_id">
@@ -76,12 +75,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="emoji_id">Emoji Id</label>
-                            <input type="text" class="form-control" id="emoji_id" name="emoji_id" value="{{ old('emoji_id') }}" />
+                          <label for="emoji_id">Emoji</label>
+                          <select class="form-control" id="emoji_id" name="emoji_id">
+                          @foreach ($emojis as $emoji)
+                              <option value="{{ $emoji->id }}" {{ (old('emoji_id')==$emoji->id)?"selected":"" }}>{{ $emoji->name }}</option>
+                          @endforeach
+                          </select>
                         </div>
 
                         <a href="{{ route('admin.activities.index') }}" class="btn btn-default">Cancel</a>
-                        <a href="{{ route('admin.steps.create') }}" class="btn btn-default">Add Steps</a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
 
                     </form>
