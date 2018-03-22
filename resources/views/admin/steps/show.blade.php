@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    View Steps
+                    Step: {{ $step->title }}
                 </div>
 
                 <div class="panel-body">
@@ -27,6 +27,13 @@
                                 <td>Tip</td>
                                 <td>{{ $step->tip_id }}</td>
                             </tr>
+
+                            <tr>
+                                <td>Tip</td>
+                                <td>{{ $step->description }}</td>
+                            </tr>
+
+
 
                             <!-- <tr>
                                 <td>Picture</td>
