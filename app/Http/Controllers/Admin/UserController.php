@@ -6,6 +6,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Activity;
+
 class UserController extends Controller
 {
     /**
@@ -128,11 +129,13 @@ class UserController extends Controller
         {
             $users = User::findOrFail($id);
             $activities = Activity::all();
+
             return view('admin.users.activities.create')->with(array(
                 'user' => $user,
                 'activity' => $activity
             ));
         }
+
         /**
          * Store a newly created resource in storage.
          *
@@ -144,9 +147,14 @@ class UserController extends Controller
             $request->validate([
                 'activity' => 'required'
             ]);
+
             $user = User::find($id);
             $user->activity()->sync($request->input('activity'));
+
             $session = $request->session()->flash('message', 'User activities stored successfully!');
+
             return redirect()->route('admin.users.show', $id);
         }
+
+
     }
