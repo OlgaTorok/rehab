@@ -14,14 +14,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-9">
-            <div class="card" style="margin-bottom: 30px; padding: 20px; box-shadow: 2px 5px 8px #dadddf">
+            <div class="card hover-card" style="margin-bottom: 30px; padding: 20px; box-shadow: 2px 5px 8px #dadddf">
                 <!--Card image-->
-                <!-- <div class="view overlay">
-                    <img class="card-img-top" src="{{ url('../public/img/robot.png') }}" alt="Card image cap" style="width: 50%" />
+                <div class="view overlay">
+                    <!-- <img class="card-img-top" src="{{ url('../public/img/robot.png') }}" alt="Card image cap" style="width: 100%" /> -->
                     <a>
                         <div class="mask rgba-white-slight"></div>
                     </a>
-                </div> -->
+                </div>
                 <!--/.Card image-->
                 <!--Card content-->
                 <div class="card-body elegant-color white-text">
@@ -55,9 +55,6 @@
                     <hr class="hr-light">
                 </div>  <!--/.Card content-->
             </div>  <!--/.Card -->
-
-
-
         </div>  <!-- End col-md-9 -->
 
         <div class="col-md-3 sidebar">
@@ -74,58 +71,12 @@
         </div>  <!-- End sidebar -->
 
     </div><!-- end row -->
-
-
-
     <hr>
-    <!--Footer-->
-    <footer class="page-footer font-small pt-4 mt-4 indigo lighten-1">
-        <!--Footer Links-->
-        <div class="container-fluid text-center text-md-left">
-            <div class="row">
-                <!--First column-->
-                <div class="col-md-6">
-                    <h5 class="text-uppercase">National Rehabilitation Hospital</h5>
-                    <p>Here you can use rows and columns here to organize your footer content.</p>
-                </div>
-                <!--/.First column-->
-                <!--Second column-->
-                <div class="col-md-6">
-                    <h5 class="text-uppercase">Links</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--/.Second column-->
-            </div>
-        </div>
-        <!--/.Footer Links-->
 
-        <!--Copyright-->
-        <div class="footer-copyright py-3 text-center indigo">
-            © 2018 Copyright:
-            <a href="https://mdbootstrap.com/material-design-for-bootstrap/"> NRH </a>
-        </div>
-        <!--/.Copyright-->
-
-    </footer>
-    <!--/.Footer-->
     <!-- Site footer -->
-    <!-- <footer class="footer">
+    <footer class="footer">
         <p>&copy; 2018, NRH</p>
-    </footer> -->
-
+    </footer>
 
 </div> <!-- /container -->
 

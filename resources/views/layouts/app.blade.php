@@ -35,10 +35,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav mr-auto">
                         <!-- &nbsp; -->
-                        <form class="form-inline my-2 my-lg-0">
+                        <!-- <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
+                        </form> -->
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -87,12 +87,6 @@
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <!-- <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script> -->
-    <!-- Bootstrap tooltips -->
-    <!-- <script src="{{ asset('js/popper.min.js') }}"></script> -->
-    <!-- Bootstrap core JavaScript -->
-    <!-- <script src="{{ asset('js/bootstrap.min.js') }}"></script> -->
-    <!-- MDB core JavaScript -->
-    <!-- <script src="{{ asset('js/mdb.min.js') }}"></script> -->
+
 </body>
 </html>
