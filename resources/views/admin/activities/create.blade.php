@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3>Add Step</h3>
+                    <h3>Add Activities</h3>
                 </div>
 
                 <div class="panel-body">
@@ -19,7 +19,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('admin.steps.store') }}">
+                    <form method="POST" action="{{ route('admin.activities.store') }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group">
@@ -46,8 +46,42 @@
                             </select>
                         </div>
 
-                        <a href="{{ route('admin.steps.index') }}" class="btn btn-default">Cancel</a>
+                        <div class="form-group">
+                            <label for="level_id">Level</label>
+                            <select class="form-control" id="level_id" name="level_id">
+                            @foreach ($levels as $level)
+                                <option value="{{ $level->id }}" {{ (old('level_id')==$level->id)?"selected":"" }}>{{ $level->name }}</option>
+                            @endforeach
+                            </select>
+                        </div>
 
+                        <!--  <input type="text" class="form-control" id="category_id" name="category_id" value="{{ old('category_id') }}" /> -->
+                        <div class="form-group">
+                            <label for="category_id">Category</label>
+                            <select class="form-control" id="category_id" name="category_id">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}" {{ (old('category_id')==$category->id)?"selected":"" }}>{{ $category->cat_name }}</option>
+                            @endforeach
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="rating_id">Rating</label>
+                            <select class="form-control" id="rating_id" name="rating_id">
+                            @foreach ($ratings as $rating)
+                                <option value="{{ $rating->id }}" {{ (old('rating_id')==$rating->id)?"selected":"" }}>{{ $rating->name }}</option>
+                            @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emoji_id">Emoji Id</label>
+                            <input type="text" class="form-control" id="emoji_id" name="emoji_id" value="{{ old('emoji_id') }}" />
+                        </div>
+
+                        <a href="{{ route('admin.activities.index') }}" class="btn btn-default">Cancel</a>
+                        <a href="{{ route('admin.steps.create') }}" class="btn btn-default">Add Steps</a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
 
                     </form>

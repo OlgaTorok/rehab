@@ -48,13 +48,13 @@ class ActivityController extends Controller
         $cateogories = Category::all();
         $levels = Level::all();
         $ratings = Rating::all();
-        $emojis = Emoji::all();
+        //$emojis = Emoji::all();
         $params = array(
             'tips' => $tips,
             'categories' => $cateogories,
             'levels' => $levels,
             'ratings' => $ratings,
-            'emojis' => $emojis
+          //  'emojis' => $emojis
         );
         return view('admin.activities.create')->with($params);
     }
@@ -217,6 +217,4 @@ class ActivityController extends Controller
 
         return redirect()->route('admin.activities.show', $id);
     }
-
-
 }

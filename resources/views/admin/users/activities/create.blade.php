@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3>Add Step</h3>
+                    <h3>Edit Activities for User: {{ $user->name }}</h3>
                 </div>
 
                 <div class="panel-body">
@@ -20,34 +20,44 @@
 
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('admin.steps.store') }}">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <form method="POST" action="{{ route('admin.users.activities_store', $user->id) }}">
+                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                        <div class="form-group">
-                            <label for="title">Title</label>
-                            <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" />
-                        </div>
+                          <div class="form-group">
+                              <label for="title">Title</label>
+                              <input type="text" class="form-control" id="title" name="title" value="{{ $activity[0]->title }}" />
+                          </div>
 
                        <div class="form-group">
                             <label for="description"> Description</label>
-                            <input type="text" class="form-control" id="description" name="description" value="{{ old('description') }}" />
+                            <input type="text" class="form-control" id="description" name="description" value="{{ $activity[0]->description }}" />
                         </div>
 
                        <div class="form-group">
                             <label for="short_descript">Short Description</label>
-                            <input type="text" class="form-control" id="short_descript" name="short_descript" value="{{ old('short_descript') }}" />
+                            <input type="text" class="form-control" id="short_descript" name="short_descript" value="{{ $activity[0]-> short_descript }}" />
                         </div>
 
                        <div class="form-group">
                             <label for="tip_id">Tip</label>
-                            <select class="form-control" id="tip_id" name="tip_id">
-                            @foreach ($tips as $tip)
-                                <option value="{{ $tip->id }}" {{ (old('tip_id')==$tip->id)?"selected":"" }}>{{ $tip->name }}</option>
-                            @endforeach
-                            </select>
+                            <input type="text" class="form-control" id="tip_id" name="tip_id" value="{{ old('tip_id') }}" />
                         </div>
 
-                        <a href="{{ route('admin.steps.index') }}" class="btn btn-default">Cancel</a>
+                        <div class="form-group">
+                            <label for="category_id">Category</label>
+                            <input type="text" class="form-control" id="category_id" name="category_id" value="{{ old('category_id') }}" />
+                        </div>
+
+                       <div class="form-group">
+                            <label for="rating_id">Rating</label>
+                            <input type="text" class="form-control" id="rating_id" name="rating_id" value="{{ old('rating_id') }}" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emoji_id">Emoji Id</label>
+                            <input type="text" class="form-control" id="emoji_id" name="emoji_id" value="{{ old('emoji_id') }}" />
+                        </div>
+
 
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
                     </form>

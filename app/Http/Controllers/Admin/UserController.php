@@ -131,8 +131,8 @@ class UserController extends Controller
             $activities = Activity::all();
 
             return view('admin.users.activities.create')->with(array(
-                'user' => $user,
-                'activity' => $activity
+                'user' => $users,
+                'activity' => $activities
             ));
         }
 
@@ -143,7 +143,7 @@ class UserController extends Controller
          * @return \Illuminate\Http\Response
          */
         public function activities_store(Request $request, $id)
-        {
+          {
             $request->validate([
                 'activity' => 'required'
             ]);

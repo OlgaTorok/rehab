@@ -53,8 +53,10 @@
                     </table>
 
                     <a href="{{ route('admin.activities.index') }}" class="btn btn-default">Back</a>
+
                     <a href="{{ route('admin.activities.edit', array('activity' => $activity)) }}"
                        class="btn btn-warning">Edit</a>
+
                     <form style="display:inline-block" method="POST" action="{{ route('admin.activities.destroy', array('activity' => $activity)) }}">
                            <input type="hidden" name="_method" value="DELETE">
                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
