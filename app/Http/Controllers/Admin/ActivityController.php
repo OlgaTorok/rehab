@@ -174,7 +174,6 @@ class ActivityController extends Controller
     public function destroy($id)
     {
         $activity = Activity::findOrFail($id);
-
         $activity->delete();
 
         Session::flash('message', 'Activity deleted successfully!');

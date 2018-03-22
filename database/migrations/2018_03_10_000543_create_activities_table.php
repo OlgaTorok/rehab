@@ -14,25 +14,23 @@ class CreateActivitiesTable extends Migration
     public function up()
     {
         Schema::create('activities', function (Blueprint $table) {
-            $table->increments('id')->unsigned(); // kh
+            $table->increments('id')->unsigned();
             $table->string('title');
             $table->string('description', 255);
             $table->string('short_descript', 255);
             $table->string('picture')->nullable($value = true);
-            $table->integer('tip_id')->unsigned();  // kh
+            $table->integer('tip_id')->unsigned()->nullable($value = true);
             $table->integer('level_id')->unsigned();
             $table->integer('category_id')->unsigned();
             $table->integer('rating_id')->unsigned();
             $table->integer('emoji_id')->unsigned();
-            // $table->integer('user_id')->nullable($value = true); // kh
             $table->timestamps();
 
             $table->foreign('level_id')->references('id')->on('levels');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('rating_id')->references('id')->on('ratings');
             $table->foreign('emoji_id')->references('id')->on('emojis');
-            $table->foreign('tip_id')->references('id')->on('tips');    // kh
-            // $table->foreign('user_id')->references('id')->on('users');  // kh
+            $table->foreign('tip_id')->references('id')->on('tips');
         });
     }
 

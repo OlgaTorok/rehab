@@ -18,7 +18,7 @@ class CreateStepsTable extends Migration
             $table->string('title');
             $table->string('description', 255);
             // $table->string('picture')->nullable($value = true);
-            $table->integer('tip_id')->unsigned();
+            $table->integer('tip_id')->unsigned()->nullable($value = true);
             $table->timestamps();
 
             $table->foreign('tip_id')->references('id')->on('tips');
