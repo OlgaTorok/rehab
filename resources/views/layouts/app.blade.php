@@ -10,11 +10,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
-    <!-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"> -->
-    <!-- Material Design Bootstrap -->
-    <!-- <link href="{{ asset('css/mdb.min.css') }}" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous"> -->
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+
     <script src="https://use.fontawesome.com/874dbadbd7.js"></script>
 </head>
 <body>

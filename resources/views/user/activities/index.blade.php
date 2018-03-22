@@ -26,7 +26,7 @@
                 <!-- ******************** CARDS ************************ -->
                     @if ($activity->category_id == $category->id)
                     <div class="col-3 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card" style="margin-bottom: 30px; box-shadow: 2px 5px 8px #dadddf">
+                        <div class="card">
                             <img class="card-img-top" src="{{ url('../public/img/robot.png') }}" alt="Card image cap" style="width: 100%" />
                             <div class="card-body" style="padding: 10px;">
                                 <h3 class="card-title">{{ $activity->title }}</h3>
