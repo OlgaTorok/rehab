@@ -12,6 +12,16 @@
 </div><!--  -->
 
 <div class="container">
+
+    <div class="row">
+        <div class="col-md-3">
+            <select class="form-control">
+                <option>Choose category</option>
+                <option>1</option>
+                <option>2</option>
+            </select>
+        </div>
+    </div>
     @foreach ($categories as $category)
         @if (Auth::user()->activities()->where('category_id', $category->id)->get()->count() > 0)
         <div class="row">

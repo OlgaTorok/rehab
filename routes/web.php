@@ -124,3 +124,5 @@ Route::resource('user/activities', 'User\ActivityController', ['as' => 'user']);
 
 Route::get('/user/activities', 'User\ActivityController@index')->name('user.activities.index');
 Route::get('/user/activities/{id}', 'User\ActivityController@show')->name('user.activities.show');
+
+// Route::post('/user/search', 'User\SearchController@filter');
