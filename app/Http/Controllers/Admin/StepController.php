@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Session;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\Step;
-
+use App\Tip;
 
 class StepController extends Controller
 {
