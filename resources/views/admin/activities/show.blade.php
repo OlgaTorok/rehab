@@ -31,7 +31,7 @@
                             </tr>
                             <tr>
                                 <td>Picture</td>
-                                <td>{{ $activity->picture }}</td>
+                                <td>{{ $activity->picture->name }}</td>
                             </tr>
                             <tr>
                                 <td>Level ID</td>
@@ -53,7 +53,6 @@
                     </table>
 
                     <a href="{{ route('admin.activities.index') }}" class="btn btn-default">Back</a>
-
                     <a href="{{ route('admin.activities.edit', array('activity' => $activity)) }}"
                        class="btn btn-warning">Edit</a>
 
