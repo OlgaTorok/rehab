@@ -31,7 +31,7 @@
                                    />
                             <label for="step_{{ $step->id }}">{{ $step->title }}</label>
                         @endforeach
-                        <a href="{{ route('admin.activities.show', array('activity' => $activity)) }}" class="btn btn-default">Cancel</a>
+                        <a href="{{ route('admin.activities.show', array('activity' => $activity)) }}" class="btn btn-default">Back</a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
 
                     </form>

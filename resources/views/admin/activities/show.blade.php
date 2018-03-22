@@ -27,7 +27,7 @@
                             </tr>
                             <tr>
                                 <td>Tip</td>
-                                <td>{{ $activity->tip->name }}</td>
+                                <td>{{ $activity->tip->description }}</td>
                             </tr>
                             <tr>
                                 <td>Picture</td>

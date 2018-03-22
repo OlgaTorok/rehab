@@ -37,18 +37,6 @@
                             <label for="tip_id">Tip ID</label>
                             <input type="text" class="form-control" id="tip_id" name="tip_id" value="{{ old('tip_id', $step->tip_id) }}" />
                         </div>
-
-                        <!-- <div class="form-group">
-                                <label for="steps-content">Tip</label>
-                                <textarea placeholder="{{ old('tip', $step->tip) }}"
-                                          style="resize: vertical"
-                                          id="tip-content"
-                                          name="description"
-                                          rows="2" spellcheck="false"
-                                          class="form-control autosize-target text-left">
-                                </textarea>
-                            </div> -->
-
                         <!-- <div class="form-group">
                             <label for="picture">Picture</label>
                             <input type="text" class="form-control" id="picture" name="picture" value="{{ old('picture', $step->picture) }}" />

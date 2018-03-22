@@ -46,15 +46,15 @@ class StepController extends Controller
         $request->validate([
             'title' => 'required|max:191',
             'description' => 'required|max:191',
-            'tip' => 'required|max:191',
-            'picture' => 'required|max:191'
+            'tip_id' => 'required|integer|min:0',
+            // 'picture' => 'required|max:191'
         ]);
 
         $step = new Step();
         $step->title = $request->input('title');
         $step->description = $request->input('description');
-        $step->tip = $request->input('tip');
-        $step->picture = $request->input('picture');
+        $step->tip_id = $request->input('tip_id');
+        // $step->picture = $request->input('picture');
         $step->save();
 
         $session = $request->session()->flash('message', 'Step added successfully!');
@@ -106,14 +106,14 @@ class StepController extends Controller
         $request->validate([
             'title' => 'required|max:191',
             'description' => 'required|max:191',
-            'tip' => 'required|max:191',
-            'picture' => 'required|max:191'
+            'tip_id' => 'required|integer|min:0',
+            // 'picture' => 'required|max:191'
         ]);
 
         $step->title = $request->input('title');
         $step->description = $request->input('description');
-        $step->tip = $request->input('tip');
-        $step->picture = $request->input('picture');
+        $step->tip_id = $request->input('tip_id');
+        // $step->picture = $request->input('picture');
         $step->save();
 
         $session = $request->session()->flash('message', 'Step updated successfully!');

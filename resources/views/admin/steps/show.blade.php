@@ -25,7 +25,7 @@
 
                             <tr>
                                 <td>Tip</td>
-                                <td>{{ $step->tip }}</td>
+                                <td>{{ $step->tip_id }}</td>
                             </tr>
 
                             <!-- <tr>
