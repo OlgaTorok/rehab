@@ -30,6 +30,6 @@ class Activity extends Model
     }
 
     public function tip(){
-        return $this->belongsToMany('App\Tip');
+        return $this->belongsTo('App\Tip');
     }
 }

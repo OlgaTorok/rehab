@@ -44,10 +44,12 @@
                     <a href="{{ route('admin.users.index') }}" class="btn btn-default">Back</a>
                     <a href="{{ route('admin.users.edit', array('user' => $user)) }}"
                        class="btn btn-warning">Edit</a>
-                    <form style="display:inline-block" method="POST" action="{{ route('admin.users.destroy', array('user' => $user )) }}">
+                    <form style="display:inline-block"
+                          method="POST"
+                          action="{{ route('admin.users.destroy', array('user' => $user )) }}">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button type="submit" class="form-control btn btn-danger">Delete</a>
+                        <button type="submit" class="form-control btn btn-danger">Delete</button>
                     </form>
 
 
@@ -57,17 +59,16 @@
                     @else
                     <table class="table">
                         <tbody>
-                        @foreach ($users->activities as $activity)
+                        @foreach ($user->activities as $activity)
                             <tr>
-                                <td>{{ $activities->title }}</td>
+                                <td>{{ $activity->title }}</td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
                     @endif
-                    <a href="{{ route('admin.users.activities_create',
-                    $user->id) }}"
-                    class="btn btn-primary">Edit Activity</a
+                    <a href="{{ route('admin.users.activities_create',$user->id) }}"
+                       class="btn btn-primary">Edit Activity</a>
 
                 </div>  <!-- panel-body -->
             </div>  <!-- panel -->

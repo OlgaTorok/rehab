@@ -63,9 +63,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $users= User::findOrFail($id);
+        $user= User::findOrFail($id);
         return view ('admin.users.show')->with(array(
-            'user'=> $users
+            'user'=> $user
         ));
     }
     /**
@@ -127,12 +127,12 @@ class UserController extends Controller
          */
         public function activities_create($id)
         {
-            $users = User::findOrFail($id);
+            $user = User::findOrFail($id);
             $activities = Activity::all();
 
             return view('admin.users.activities.create')->with(array(
-                'user' => $users,
-                'activity' => $activities
+                'user' => $user,
+                'activities' => $activities
             ));
         }
 
@@ -145,11 +145,11 @@ class UserController extends Controller
         public function activities_store(Request $request, $id)
           {
             $request->validate([
-                'activity' => 'required'
+                'activities' => 'required'
             ]);
 
             $user = User::find($id);
-            $user->activity()->sync($request->input('activity'));
+            $user->activities()->sync($request->input('activities'));
 
             $session = $request->session()->flash('message', 'User activities stored successfully!');
 

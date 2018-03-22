@@ -27,7 +27,7 @@
                             </tr>
                             <tr>
                                 <td>Tip</td>
-                                <td>{{ $activity->tip_id }}</td>
+                                <td>{{ $activity->tip->name }}</td>
                             </tr>
                             <tr>
                                 <td>Picture</td>
@@ -46,8 +46,8 @@
                                 <td>{{ $activity->rating->name }}</td>
                             </tr>
                             <tr>
-                                <td>Emoji ID</td>
-                                <td>{{ $activity->emoji_id }}</td>
+                                <td>Emoji</td>
+                                <td>{{ $activity->emoji->name }}</td>
                             </tr>
                         </tbody>
                     </table>
