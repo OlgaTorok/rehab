@@ -13,6 +13,12 @@
 
 <div class="container">
     <div class="row">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('user.activities.index') }}">Activities</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ $activity->title }}</li>
+            </ol>
+        </nav>
         <div class="col-md-9">
             <div class="card hover-card" style="margin-bottom: 30px; padding: 20px; box-shadow: 2px 5px 8px #dadddf">
                 <!--Card image-->
