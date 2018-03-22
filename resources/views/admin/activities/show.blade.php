@@ -31,18 +31,18 @@
                             </tr>
                             <tr>
                                 <td>Picture</td>
-                                <td>{{ $activity->picture->name }}</td>
+                                <td>{{ $activity->picture }}</td>
                             </tr>
                             <tr>
-                                <td>Level ID</td>
+                                <td>Level</td>
                                 <td>{{ $activity->level->name }}</td>
                             </tr>
                             <tr>
-                                <td>Category ID</td>
+                                <td>Category</td>
                                 <td>{{ $activity->category->cat_name }}</td>
                             </tr>
                             <tr>
-                                <td>Rating ID</td>
+                                <td>Rating</td>
                                 <td>{{ $activity->rating->name }}</td>
                             </tr>
                             <tr>
