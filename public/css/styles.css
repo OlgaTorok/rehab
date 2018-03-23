@@ -5,13 +5,6 @@
     box-shadow: 2px 5px 8px #dadddf;
 }
 
-.card-menu {
-    box-sizing: inherit;
-    -webkit-box-flex: 1;
-    margin: 0 auto;
-    height: 400px;
-}
-
 /* .card {
     position: relative;
     margin: 0 auto;

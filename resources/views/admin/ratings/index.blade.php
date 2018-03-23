@@ -29,7 +29,7 @@
                                 @foreach ($ratings as $rating)
                                     <tr>
                                         <td>{{ $rating->name }}</td>
-                                        <td>{{ $rating->tips->name }}</td>
+                                        <td>{{ $rating->tip->description }}</td>
                                         <td>
                                             <a href="{{ route('admin.ratings.edit', array('rating' => $rating)) }}"
                                                    class="btn btn-primary">Edit</a>
