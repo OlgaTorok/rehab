@@ -32,6 +32,7 @@
         </div>
     </div>
 
+    <!-- This is a filter - same code as searchbar  -->
     <div class="row">
         <div class="col-md-3">
             <select class="form-control">
