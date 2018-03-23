@@ -28,9 +28,10 @@
                             <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $rating->name) }}" />
                         </div>
+                        <!-- This will become tip description dropdown menu -->
                         <div class="form-group">
-                            <label for="tip_id">Tip</label>
-                            <input type="text" class="form-control" id="tip_id" name="tip_id" value="{{ old('tip_id', $activity->tip->name) }}" />
+                            <label for="tip_id">Tip ID</label>
+                            <input type="text" class="form-control" id="tip_id" name="tip_id" value="{{ old('tip_id', $rating->tip_id) }}" />
                         </div>
 
                         <a href="{{ route('admin.ratings.index') }}" class="btn btn-default">Cancel</a>
