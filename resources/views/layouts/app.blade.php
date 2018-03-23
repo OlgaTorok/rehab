@@ -11,7 +11,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
-
     <script src="https://use.fontawesome.com/874dbadbd7.js"></script>
 </head>
 <body>
@@ -86,7 +85,9 @@
         @yield('content')
     </div>
     <!-- Scripts -->
+    <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 
 </body>
 </html>
