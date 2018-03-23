@@ -52,10 +52,10 @@
 
                         <!-- code for drop down menu for tips to go here -->
 
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                             <label for="tip_id">Tip</label>
                             <input type="text" class="form-control" id="tip_id" name="tip_id" value="{{ old('tip_id', $activity->tip->name) }}" />
-                        </div> -->
+                        </div>
 
                         <!-- code for drop down menu for levels to go here -->
 

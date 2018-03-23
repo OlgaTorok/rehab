@@ -24,7 +24,7 @@
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Short Description</th>
-                                <!-- <th>Tip</th> -->
+                                <th>Tip</th>
                                 <th>Picture</th>
                                 <th>Level</th>
                                 <th>Category</th>
@@ -38,7 +38,7 @@
                                         <td>{{ $activity->title }}</td>
                                         <td>{{ $activity->description }}</td>
                                         <td>{{ $activity->short_descript }}</td>
-                                        <!-- <td>{{ $activity->tip->name }}</td> -->
+                                        <td>{{ $activity->tip->name }}</td>
                                         <td>{{ $activity->picture }}</td>
                                         <td>{{ $activity->level->name }}</td>
                                         <td>{{ $activity->category->cat_name }}</td>

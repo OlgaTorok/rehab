@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tip extends Model
 {
-    protected $table = 'tips';
+    
 
     public function activities()
     {
