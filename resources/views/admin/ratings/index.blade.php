@@ -51,7 +51,7 @@
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3>Add new rating</h3>
+                        <h3>Add new Rating</h3>
                     </div>
 
                     <div class="panel-body">
