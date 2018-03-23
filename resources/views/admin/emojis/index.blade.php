@@ -21,18 +21,19 @@
                         @else
                         <table class = "table table-hover table-responsive">
                             <thead>
-                                <th>ID</th>
+                          <!--  <th>ID</th> -->
                                 <th>Name</th>
-                                <th>Image</th>
+                          <!--  <th>Image</th> -->
                             </thead>
 
                             <tbody>
                                 @foreach ($emojis as $emoji)
                                     <tr>
-                                        <td>{{ $emoji->id }}</td>
-                                        <td>{{ $emoji->name }}</td>
-                                        <td>{{ $emoji->image }}</td>
-                                        <td>
+                                  <!-- <td>{{ $emoji->id }}</td> -->
+                                       <td>{{ $emoji->name }}</td>
+                                  <!-- <td>{{ $emoji->image }}</td> -->
+
+                                      <td>
                                             <a href="{{ route('admin.emojis.edit', array('emoji' => $emoji)) }}"
                                                    class="btn btn-primary">Edit</a>
                                             <form style="display:inline-block" method="POST" action="{{ route('admin.emojis.destroy', array('emoji' => $emoji)) }}">
@@ -55,7 +56,7 @@
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3>Add new emoji</h3>
+                        <h3>Add new Emoji</h3>
                     </div>
 
                     <div class="panel-body">

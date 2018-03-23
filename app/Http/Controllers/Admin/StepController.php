@@ -32,7 +32,12 @@ class StepController extends Controller
      */
     public function create()
     {
-        return view('admin.steps.create');
+      $tips = Tip::all();
+      $params = array(
+          'tips' => $tips,
+
+      );
+      return view('admin.steps.create')->with($params);
     }
 
     /**
@@ -91,6 +96,7 @@ class StepController extends Controller
             'step' => $step
         ));
     }
+
 
     /**
      * Update the specified resource in storage.

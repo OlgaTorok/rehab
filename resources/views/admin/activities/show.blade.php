@@ -29,10 +29,12 @@
                                 <td>Tip</td>
                                 <td>{{ $activity->tip->description }}</td>
                             </tr>
-                            <tr>
+
+                          <!--  <tr>
                                 <td>Picture</td>
                                 <td>{{ $activity->picture }}</td>
-                            </tr>
+                            </tr> -->
+
                             <tr>
                                 <td>Level</td>
                                 <td>{{ $activity->level->name }}</td>
@@ -56,7 +58,9 @@
                     <a href="{{ route('admin.activities.edit', array('activity' => $activity)) }}"
                        class="btn btn-warning">Edit</a>
 
-                    <form style="display:inline-block" method="POST" action="{{ route('admin.activities.destroy', array('activity' => $activity)) }}">
+                    <form style="display:inline-block"
+                          method="POST"
+                          action="{{ route('admin.activities.destroy', array('activity' => $activity)) }}">
                            <input type="hidden" name="_method" value="DELETE">
                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                            <a type="submit" class="form-control btn btn-danger">Delete</a>

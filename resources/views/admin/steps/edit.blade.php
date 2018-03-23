@@ -34,7 +34,7 @@
                         </div>
                         <!-- OT - tip->description here -->
                         <div class="form-group">
-                            <label for="tip_id">Tip ID</label>
+                            <label for="tip_id">Tip Name</label>
                             <input type="text" class="form-control" id="tip_id" name="tip_id" value="{{ old('tip_id', $step->tip_id) }}" />
                         </div>
                         <!-- <div class="form-group">

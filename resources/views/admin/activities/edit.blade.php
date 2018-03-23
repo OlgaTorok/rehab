@@ -45,28 +45,38 @@
                             </form>
                         </div> -->
 
-                        <div class="form-group">
+                    <!--    <div class="form-group">
                             <label for="picture">Picture</label>
                             <input type="text" class="form-control" id="picture" name="picture" value="{{ old('picture', $activity->picture) }}" />
-                        </div>
+                        </div> -->
+
+                        <!-- code for drop down menu for tips to go here -->
 
                         <div class="form-group">
                             <label for="tip_id">Tip</label>
                             <input type="text" class="form-control" id="tip_id" name="tip_id" value="{{ old('tip_id', $activity->tip->name) }}" />
                         </div>
 
+                        <!-- code for drop down menu for levels to go here -->
+
                         <div class="form-group">
                             <label for="level_id">Level</label>
                             <input type="text" class="form-control" id="level_id" name="level_id" value="{{ old('level_id', $activity->level->name) }}" />
                         </div>
+
+                        <!-- code for drop down menu for levels to go here -->
                         <div class="form-group">
                             <label for="category_id">Category</label>
                             <input type="text" class="form-control" id="category_id" name="category_id" value="{{ old('category_id', $activity->category->cat_name) }}" />
                         </div>
+
+                        <!-- code for drop down menu for rating to go here -->
                         <div class="form-group">
                             <label for="rating_id">Rating</label>
                             <input type="text" class="form-control" id="rating_id" name="rating_id" value="{{ old('rating_id', $activity->rating->name) }}" />
                         </div>
+
+                        <!-- code for drop down menu for emojis to go here -->
                         <div class="form-group">
                             <label for="emoji_id">Emoji</label>
                             <input type="text" class="form-control" id="emoji_id" name="emoji_id" value="{{ old('emoji_id', $activity->emoji->name) }}" />

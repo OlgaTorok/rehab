@@ -24,6 +24,8 @@
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Tip Name</th>
+                                
+                              <!--  <th>Tip Description</th> -->
                                 <!-- <th>Picture</th> -->
                                 <th>Action</th>
                             </thead>
