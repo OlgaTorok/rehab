@@ -22,7 +22,6 @@
     </div>
 
     <div class="row">
-
         <div class="col-md-9">
             <div class="panel panel-default" style="box-shadow: 2px 5px 8px #dadddf;">
                 <div class="panel-heading">
@@ -44,15 +43,19 @@
                         <hr />
                         <p class="card-text"><b>Level: </b> {{ $activity->level->name }}</p>
                         <hr />
-                        <p class="card-text"><b>Steps:</b>{{ $activity->step_id }}</p>
-                        <hr />
+                        <p class="card-text"><b>Steps: </b></p>
+                        @foreach ($activity->steps as $step)
+                            @if (count($activity->steps) == 0)
+                                <p>There are no steps for this activity</p>
+                            @else
+                                <p class="card-text">{{ $step->description }}</p>
+                                @endif
+                        @endforeach
+                        <hr class="hr-light">
                         <p class="card-text">
                             <p style="text-align: center;"><b>How did the activity go?</b></p>
                             <div class="row">
                                 <div class="rate" style="text-align: center">
-
-
-
                                     <div class="col-xs-4 col-md-4 col-lg-4"><button type="button" class="btn btn-info tip-popover" data-container="body" data-toggle="popover" data-placement="top" data-content="{{ $activity->tip->description }}">Too easy</button></div>
                                     <div class="col-xs-4 col-md-4 col-lg-4"><button type="button" class="btn btn-info tip-popover" data-container="body" data-toggle="popover" data-placement="top" data-content="{{ $activity->tip->description }}">Just Right</button></div>
                                     <div class="col-xs-4 col-md-4 col-lg-4"><button type="button" class="btn btn-info tip-popover" data-container="body" data-toggle="popover" data-placement="top" data-content="{{ $activity->tip->description }}">Too Hard</button></div>
@@ -63,7 +66,6 @@
                     <hr class="hr-light">
                 </div>
             </div>
-
         </div>  <!-- End col-md-9 -->
 
         <div class="col-md-3">
@@ -71,11 +73,9 @@
                 <div class="card" style="box-shadow: 2px 5px 8px #dadddf; padding: 10px;">
                     <div class="card-body">
                         <h4 class="card-title">Related Activities</h4>
-                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                        <!-- <p class="card-text">Below you can find related activities.</p> -->
-                        <a href="#" class="card-link">Do the Twist</a><br />
-                        <a href="#" class="card-link">Want a cracker</a><br />
-                        <a href="#" class="card-link">Life's a Beach</a><br />
+                        @foreach(Auth::user()->activities()->where('activity_id', $activity->id)->get() as $activity)
+                            <a href="#" class="card-link">{{ $activity->title }}</a><br />
+                        @endforeach
                     </div>
                 </div>  <!-- End card -->
             </div>

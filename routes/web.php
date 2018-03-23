@@ -134,3 +134,11 @@ Route::get('/user/activities', 'User\ActivityController@index')->name('user.acti
 Route::get('/user/activities/{id}', 'User\ActivityController@show')->name('user.activities.show');
 
 // Route::post('/user/search', 'User\SearchController@filter');
+Route::any('/search',function(){
+    $find = Input::get ( 'find' );
+    $activity = Activity::where('title','LIKE','%'.$find.'%')->get();
+    if(count($activity) > 0)
+        return view('/user/activities')->withDetails($activity)->withQuery ( $find );
+    else
+        return view ('/user/activities')->withMessage('No Details found. Try to search again !');
+});
