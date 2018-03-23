@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Session;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\Activity;
-// use App\Tip;
+use App\Tip;
 use App\Category;
 use App\Level;
 use App\Rating;
@@ -72,7 +72,7 @@ class ActivityController extends Controller
            'description' => 'required',
            'short_descript' => 'required|max:20',
            'picture' => 'required|max:191',
-           // 'tip_id' => 'required|integer|min:0',
+           'tip_id' => 'required|integer|min:0',
            'level_id' => 'required|integer|min:0',
            'category_id' => 'required|integer|min:0',
            'rating_id' => 'required|integer|min:0',
@@ -84,7 +84,7 @@ class ActivityController extends Controller
        $activity->description = $request->input('description');
        $activity->short_descript = $request->input('short_descript');
        $activity->picture = $request->input('picture');
-       // $activity->tip_id = $request->input('tip_id');
+       $activity->tip_id = $request->input('tip_id');
        $activity->level_id = $request->input('level_id');
        $activity->category_id = $request->input('category_id');
        $activity->rating_id = $request->input('rating_id');
@@ -142,7 +142,7 @@ class ActivityController extends Controller
             'description' => 'required',
             'short_descript' => 'required|max:20',
             'picture' => 'required|max:191',
-            // 'tip_id' => 'required|integer|min:0',
+            'tip_id' => 'required|integer|min:0',
             'level_id' => 'required|integer|min:0',
             'category_id' => 'required|integer|min:0',
             'rating_id' => 'required|integer|min:0',
@@ -153,7 +153,7 @@ class ActivityController extends Controller
         $activity->description = $request->input('description');
         $activity->short_descript = $request->input('short_descript');
         $activity->picture = $request->input('picture');
-        // $activity->tip_id = $request->input('tip_id');
+        $activity->tip_id = $request->input('tip_id');
         $activity->level_id = $request->input('level_id');
         $activity->category_id = $request->input('category_id');
         $activity->rating_id = $request->input('rating_id');
