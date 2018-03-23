@@ -51,7 +51,6 @@
                             <div class="card-body" style="padding: 10px;">
                                 <h3 class="card-title">{{ $activity->title }}</h3>
                                 <p class="card-text">{{ $activity->short_descript }}</p>
-                                <p class="card-text"><b>Level: </b> {{ $activity->level->name }}</p>
                                 <a href="{{ route('user.activities.show', $activity->id) }}" class="btn btn-primary">Go</a>
                             </div>  <!-- end card-body -->
                         </div>  <!-- end col-3 -->

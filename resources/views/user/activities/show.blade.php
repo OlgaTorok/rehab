@@ -22,7 +22,6 @@
     </div>
 
     <div class="row">
-
         <div class="col-md-9">
             <div class="panel panel-default" style="box-shadow: 2px 5px 8px #dadddf;">
                 <div class="panel-heading">
@@ -52,6 +51,7 @@
                                 <p class="card-text">{{ $step->description }}</p>
                                 @endif
                         @endforeach
+                        <hr class="hr-light">
                         <p class="card-text">
                             <p style="text-align: center;"><b>How did the activity go?</b></p>
                             <div class="row">
@@ -66,7 +66,6 @@
                     <hr class="hr-light">
                 </div>
             </div>
-
         </div>  <!-- End col-md-9 -->
 
         <div class="col-md-3">
@@ -74,11 +73,11 @@
                 <div class="card" style="box-shadow: 2px 5px 8px #dadddf; padding: 10px;">
                     <div class="card-body">
                         <h4 class="card-title">Related Activities</h4>
-                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                        <!-- <p class="card-text">Below you can find related activities.</p> -->
-                        <a href="#" class="card-link">Do the Twist</a><br />
-                        <a href="#" class="card-link">Want a cracker</a><br />
-                        <a href="#" class="card-link">Life's a Beach</a><br />
+                        @foreach(Auth::user()->activities()->where('activity_id', $activity->id)->get() as $activity)
+                            @if($activity->activity_id == $activity->id)
+                            @endif
+                            <a href="#" class="card-link">{{ $activity->title }}</a><br />
+                        @endforeach
                     </div>
                 </div>  <!-- End card -->
             </div>
