@@ -50,14 +50,16 @@
                             <p style="text-align: center;"><b>How did the activity go?</b></p>
                             <div class="row">
                                 <div class="rate" style="text-align: center">
-                                    <div class="col-md-4"><a class="btn btn-info" type="button">Too easy</a></div>
-                                    <div class="col-md-4"><a class="btn btn-info" type="button">Just right</a></div>
-                                    <div class="col-md-4"><a class="btn btn-info" type="button">Too hard</a></div>
+
+
+
+                                    <div class="col-xs-4 col-md-4 col-lg-4"><button type="button" class="btn btn-info tip-popover" data-container="body" data-toggle="popover" data-placement="top" data-content="{{ $activity->tip->description }}">Too easy</button></div>
+                                    <div class="col-xs-4 col-md-4 col-lg-4"><button type="button" class="btn btn-info tip-popover" data-container="body" data-toggle="popover" data-placement="top" data-content="{{ $activity->tip->description }}">Just Right</button></div>
+                                    <div class="col-xs-4 col-md-4 col-lg-4"><button type="button" class="btn btn-info tip-popover" data-container="body" data-toggle="popover" data-placement="top" data-content="{{ $activity->tip->description }}">Too Hard</button></div>
                                 </div>
                             </div>
                         </p>
                     </ul>
-                    <p class="font-small mb-4">{{ $activity->tip->description }}</p>
                     <hr class="hr-light">
                 </div>
             </div>

@@ -27,28 +27,29 @@
                             <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" />
                         </div>
 
+                        <div class="form-group">
+                             <label for="short_descript">Short Description</label>
+                             <input type="text" class="form-control" id="short_descript" name="short_descript" value="{{ old('short_descript') }}" />
+                         </div>
+
                        <div class="form-group">
                             <label for="description"> Description</label>
                             <input type="text" class="form-control" id="description" name="description" value="{{ old('description') }}" />
                         </div>
 
-                       <div class="form-group">
-                            <label for="short_descript">Short Description</label>
-                            <input type="text" class="form-control" id="short_descript" name="short_descript" value="{{ old('short_descript') }}" />
-                        </div>
                         <div class="form-group">
                              <label for="picture">Picture</label>
                              <input type="text" class="form-control" id="picture" name="picture" value="{{ old('picture') }}" />
                          </div>
 
-                       <!-- <div class="form-group">
+                       <div class="form-group">
                             <label for="tip_id">Tip</label>
                             <select class="form-control" id="tip_id" name="tip_id">
                             @foreach ($tips as $tip)
                                 <option value="{{ $tip->id }}" {{ (old('tip_id') == $tip->id)?"selected":"" }}>{{ $tip->description }}</option>
                             @endforeach
                             </select>
-                        </div> -->
+                        </div>
 
                         <div class="form-group">
                             <label for="level_id">Level</label>
