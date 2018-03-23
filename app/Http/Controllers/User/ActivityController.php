@@ -7,12 +7,13 @@ use Illuminate\Support\Facades\Session;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\Activity;
+use App\Step;
 use App\Category;
 use App\Tip;
 use App\Level;
 use App\Rating;
 use App\Emoji;
-use App\Step;
+
 
 class ActivityController extends Controller
 {

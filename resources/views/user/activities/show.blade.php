@@ -44,15 +44,18 @@
                         <hr />
                         <p class="card-text"><b>Level: </b> {{ $activity->level->name }}</p>
                         <hr />
-                        <p class="card-text"><b>Steps:</b>{{ $activity->step_id }}</p>
-                        <hr />
+                        <p class="card-text"><b>Steps: </b></p>
+                        @foreach ($activity->steps as $step)
+                            @if (count($activity->steps) == 0)
+                                <p>There are no steps for this activity</p>
+                            @else
+                                <p class="card-text">{{ $step->description }}</p>
+                                @endif
+                        @endforeach
                         <p class="card-text">
                             <p style="text-align: center;"><b>How did the activity go?</b></p>
                             <div class="row">
                                 <div class="rate" style="text-align: center">
-
-
-
                                     <div class="col-xs-4 col-md-4 col-lg-4"><button type="button" class="btn btn-info tip-popover" data-container="body" data-toggle="popover" data-placement="top" data-content="{{ $activity->tip->description }}">Too easy</button></div>
                                     <div class="col-xs-4 col-md-4 col-lg-4"><button type="button" class="btn btn-info tip-popover" data-container="body" data-toggle="popover" data-placement="top" data-content="{{ $activity->tip->description }}">Just Right</button></div>
                                     <div class="col-xs-4 col-md-4 col-lg-4"><button type="button" class="btn btn-info tip-popover" data-container="body" data-toggle="popover" data-placement="top" data-content="{{ $activity->tip->description }}">Too Hard</button></div>

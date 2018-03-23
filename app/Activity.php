@@ -8,7 +8,7 @@ class Activity extends Model
 {
 
     public function steps(){
-        return $this->belongsToMany(Step::class);
+        return $this->belongsToMany('App\Step');
     }
 
     public function category()
