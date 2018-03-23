@@ -25,15 +25,15 @@
                                 <td>Short Description</td>
                                 <td>{{ $activity->short_descript }}</td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td>Tip</td>
                                 <td>{{ $activity->tip->description }}</td>
-                            </tr>
+                            </tr> -->
 
-                          <!--  <tr>
+                            <tr>
                                 <td>Picture</td>
                                 <td>{{ $activity->picture }}</td>
-                            </tr> -->
+                            </tr>
 
                             <tr>
                                 <td>Level</td>

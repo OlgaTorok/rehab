@@ -28,6 +28,10 @@
                             <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $rating->name) }}" />
                         </div>
+                        <div class="form-group">
+                            <label for="tip_id">Tip</label>
+                            <input type="text" class="form-control" id="tip_id" name="tip_id" value="{{ old('tip_id', $activity->tip->name) }}" />
+                        </div>
 
                         <a href="{{ route('admin.ratings.index') }}" class="btn btn-default">Cancel</a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>

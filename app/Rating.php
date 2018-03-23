@@ -10,4 +10,9 @@ class Rating extends Model
     {
         return $this->hasMany('App\Activity')->withTimestamps();
     }
+
+    public function tips()
+    {
+        return $this->hasMany('App\Rating')->withTimestamps();
+    }
 }

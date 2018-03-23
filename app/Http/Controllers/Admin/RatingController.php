@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Session;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\Rating;
+use App\Tip;
 
 class RatingController extends Controller
 {
@@ -25,10 +26,13 @@ class RatingController extends Controller
     public function index()
     {
       $ratings = Rating::all();
+      $tips = Tip::all();
 
-       return view('admin.ratings.index')->with(array(
-           'rating' => $ratings
-       ));
+      $params = array(
+          'ratings' => $ratings,
+          'tips' => $tips
+      );
+      return view('admin.ratings.index')->with($params);
     }
 
     /**
@@ -51,11 +55,13 @@ class RatingController extends Controller
     {
       $request->validate([
           'name' => 'required|max:191',
+          'tip_id' => 'required|integer|min:0'
 
         ]);
 
         $rating = new Rating();
         $rating->name = $request->input('name');
+        $rating->tip_id = $request->input('tip_id');
 
         $rating->save();
         $session = $request->session()->flash('message', 'Rating added successfully!');
@@ -105,11 +111,13 @@ class RatingController extends Controller
       $rating = Rating::findOrFail($id);
 
       $request->validate([
-          'name' => 'required|max:191'
+          'name' => 'required|max:191',
+          'tip_id' => 'required|integer|min:0'
 
       ]);
 
       $rating->name = $request->input('name');
+      $rating->tip_id = $request->input('tip_id');
       $rating->save();
       $session = $request->session()->flash('message', 'Rating added successfully!');
 

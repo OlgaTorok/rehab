@@ -16,18 +16,20 @@
                     </div>
 
                     <div class="panel-body">
-                        @if (count($rating) === 0)
+                        @if (count($ratings) === 0)
                             <p>There are no ratings!</p>
                         @else
                         <table class = "table table-hover table-responsive">
                             <thead>
                                 <th>Name</th>
+                                <th>Tip</th>
                             </thead>
 
                             <tbody>
-                                @foreach ($rating as $rating)
+                                @foreach ($ratings as $rating)
                                     <tr>
                                         <td>{{ $rating->name }}</td>
+                                        <td>{{ $rating->tips->name }}</td>
                                         <td>
                                             <a href="{{ route('admin.ratings.edit', array('rating' => $rating)) }}"
                                                    class="btn btn-primary">Edit</a>
