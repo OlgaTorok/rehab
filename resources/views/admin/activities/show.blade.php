@@ -18,18 +18,17 @@
                                 <td>{{ $activity->title }}</td>
                             </tr>
                             <tr>
+                                <td>Short Description</td>
+                                <td>{{ $activity->short_descript }}</td>
+                            </tr>
+                            <tr>
                                 <td>Description</td>
                                 <td>{{ $activity->description }}</td>
                             </tr>
                             <tr>
-                                <td>Short Description</td>
-                                <td>{{ $activity->short_descript }}</td>
-                            </tr>
-                            <!-- <tr>
                                 <td>Tip</td>
                                 <td>{{ $activity->tip->description }}</td>
-                            </tr> -->
-
+                            </tr>
                             <tr>
                                 <td>Picture</td>
                                 <td>{{ $activity->picture }}</td>

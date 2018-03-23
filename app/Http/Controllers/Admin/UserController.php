@@ -17,6 +17,12 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+        $activities = Activity::all();
+        $params = array(
+            'users' => $users,
+            'activities' => $activities
+        );
+
         return view('admin.users.index')->with(array(
             'user' => $users
         ));

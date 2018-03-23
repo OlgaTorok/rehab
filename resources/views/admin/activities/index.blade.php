@@ -22,9 +22,9 @@
                         <table class="table table-responsive table-hover ">
                             <thead>
                                 <th>Title</th>
-                                <th>Description</th>
                                 <th>Short Description</th>
-                                <!-- <th>Tip</th> -->
+                                <th>Description</th>
+                                <th>Tip</th>
                                 <th>Picture</th>
                                 <th>Level</th>
                                 <th>Category</th>
@@ -36,9 +36,9 @@
                                 @foreach ($activities as $activity)
                                     <tr>
                                         <td>{{ $activity->title }}</td>
-                                        <td>{{ $activity->description }}</td>
                                         <td>{{ $activity->short_descript }}</td>
-                                        <!-- <td>{{ $activity->tip->name }}</td> -->
+                                        <td>{{ $activity->description }}</td>
+                                        <td>{{ $activity->tip->name }}</td>
                                         <td>{{ $activity->picture }}</td>
                                         <td>{{ $activity->level->name }}</td>
                                         <td>{{ $activity->category->cat_name }}</td>

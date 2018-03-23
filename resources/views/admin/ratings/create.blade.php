@@ -21,6 +21,7 @@
                     @endif
                     <form method="POST" action="{{ route('admin.ratings.store') }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />

@@ -56,13 +56,14 @@
 
                     <h3>Activities</h3>
                     @if (count($user->activities) == 0)
-                    <p>There are no Activities for this User</p>
+                    <p>There are no activities for this user</p>
                     @else
                     <table class="table">
                         <tbody>
                         @foreach ($user->activities as $activity)
                             <tr>
                                 <td>{{ $activity->title }}</td>
+                                <td>{{ $activity->description }}</td>
                             </tr>
                         @endforeach
                         </tbody>
