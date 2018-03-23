@@ -29,6 +29,18 @@ class ActivityController extends Controller
      */
     public function index()
     {
+
+      /**$input = array(
+          'upload' => Input::file('upload')
+      );
+
+      $rules = array(
+          'upload' => 'mimes:zip,rar|max:500'
+      );
+
+      $validator = Validator::make($input, $rules); */
+
+
         $activities = Activity::all();
 
        return view('admin.activities.index')->with(array(
