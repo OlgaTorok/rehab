@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2018 at 11:55 PM
+-- Generation Time: Mar 23, 2018 at 01:21 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -31,8 +31,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `activities` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `short_descript` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `picture` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tip_id` int(10) UNSIGNED NOT NULL,
   `level_id` int(10) UNSIGNED NOT NULL,
@@ -47,14 +47,14 @@ CREATE TABLE `activities` (
 -- Dumping data for table `activities`
 --
 
-INSERT INTO `activities` (`id`, `title`, `description`, `short_descript`, `picture`, `tip_id`, `level_id`, `category_id`, `rating_id`, `emoji_id`, `created_at`, `updated_at`) VALUES
-(1, 'Do the Twist', 'Help your child practice twisting', 'Help your child practice twisting to the right and left while sitting…', 'none', 1, 3, 1, 1, 1, '2018-03-21 22:37:38', '2018-03-21 22:37:38'),
+INSERT INTO `activities` (`id`, `title`, `short_descript`, `description`, `picture`, `tip_id`, `level_id`, `category_id`, `rating_id`, `emoji_id`, `created_at`, `updated_at`) VALUES
+(1, 'Do the Twist', 'Help your child practice twisting to the right and left while sitting…', 'Help your child practice twisting to the right and left while sitting…', 'none', 1, 3, 1, 1, 1, '2018-03-21 22:37:38', '2018-03-21 22:37:38'),
 (2, 'Where is it?', 'Help your child to find hidden objects', 'Help your child to find hidden objects and to understand that objects still exist even after the have been hidden ….', 'none', 2, 2, 2, 2, 1, '2018-03-21 22:39:16', '2018-03-21 22:39:16'),
 (3, 'Want a Cracker?', 'Help your child to learn what words mean', 'Help your child to learn what words mean', 'none', 4, 1, 5, 3, 2, '2018-03-21 22:40:56', '2018-03-21 22:40:56'),
-(4, 'Dancing with the Stars', 'Help your child to enjoy music', 'Help your child to enjoy music and making a connection with you by getting a positive reaction.', 'none', 7, 1, 6, 2, 4, '2018-03-21 22:42:42', '2018-03-21 22:42:42'),
+(4, 'Dancing with the Stars', 'Help your child to enjoy music ...', 'Help your child to enjoy music and making a connection with you by getting a positive reaction.', 'none', 7, 1, 6, 2, 4, '2018-03-21 22:42:42', '2018-03-21 22:42:42'),
 (5, 'Life’s a Beach!', 'To stimulate your child’s tactile sense.', 'To stimulate your child’s tactile sense.', 'none', 8, 2, 3, 2, 1, '2018-03-21 22:45:36', '2018-03-21 22:45:36'),
 (6, 'Snack Time for Two', 'Any small food item', 'Any small food item', 'none', 10, 4, 1, 3, 3, '2018-03-21 22:49:23', '2018-03-21 22:49:23'),
-(7, 'Animal Magic', 'Your child’s ability to imitate and copy sounds is vital to overall development including speech and language.', 'Your child’s ability to imitate and copy sounds', 'none', 13, 4, 5, 3, 3, '2018-03-21 22:51:48', '2018-03-21 22:51:48');
+(7, 'Animal Magic', 'Your child’s ability to imitate and copy sounds is vital to overall development including speech and language.', 'Your child’s ability to imitate and copy sounds is vital to overall development including speech and language.', 'none', 13, 4, 5, 3, 3, '2018-03-21 22:51:48', '2018-03-21 22:51:48');
 
 -- --------------------------------------------------------
 
@@ -69,6 +69,15 @@ CREATE TABLE `activity_step` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `activity_step`
+--
+
+INSERT INTO `activity_step` (`id`, `activity_id`, `step_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, NULL, NULL),
+(2, 1, 2, NULL, NULL),
+(4, 1, 3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -117,7 +126,7 @@ INSERT INTO `categories` (`id`, `cat_name`, `created_at`, `updated_at`) VALUES
 (3, 'Sensory', '2018-03-21 21:51:38', '2018-03-21 21:51:38'),
 (4, 'Thinking Skills', '2018-03-21 21:51:44', '2018-03-21 21:51:44'),
 (5, 'Language', '2018-03-21 21:51:48', '2018-03-21 21:51:48'),
-(6, 'Social-Emotional', '2018-03-21 21:51:51', '2018-03-21 21:51:51');
+(6, 'Social - Emotional', '2018-03-21 21:51:51', '2018-03-22 20:07:56');
 
 -- --------------------------------------------------------
 
@@ -164,7 +173,7 @@ INSERT INTO `levels` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Any Stage', '2018-03-21 21:52:00', '2018-03-21 21:52:00'),
 (2, 'Infant Stage', '2018-03-21 21:52:04', '2018-03-21 21:52:04'),
 (3, 'Older Infant Stage', '2018-03-21 21:52:07', '2018-03-21 21:52:07'),
-(4, 'Pre-School Stage', '2018-03-21 21:52:12', '2018-03-21 21:52:12');
+(4, 'Pre - School Stage', '2018-03-21 21:52:12', '2018-03-22 20:25:51');
 
 -- --------------------------------------------------------
 
@@ -218,6 +227,7 @@ CREATE TABLE `password_resets` (
 CREATE TABLE `ratings` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tip_id` int(10) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -226,10 +236,11 @@ CREATE TABLE `ratings` (
 -- Dumping data for table `ratings`
 --
 
-INSERT INTO `ratings` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Too Easy', NULL, NULL),
-(2, 'Just Right', NULL, NULL),
-(3, 'Too Hard', NULL, NULL);
+INSERT INTO `ratings` (`id`, `name`, `tip_id`, `created_at`, `updated_at`) VALUES
+(1, 'Too Easy', 0, NULL, NULL),
+(2, 'Just Right', 0, NULL, NULL),
+(3, 'Too Hard', 0, NULL, NULL),
+(4, 'Too Easy', 7, '2018-03-23 11:52:22', '2018-03-23 11:52:22');
 
 -- --------------------------------------------------------
 
@@ -295,7 +306,7 @@ CREATE TABLE `steps` (
 --
 
 INSERT INTO `steps` (`id`, `title`, `description`, `picture`, `tip_id`, `created_at`, `updated_at`) VALUES
-(1, 'Setup', 'Sit on the floor across from your child and put a few small toys on their right and left sides.', NULL, 1, '2018-03-21 22:08:09', '2018-03-21 22:08:09'),
+(1, 'Setup', 'Sit on the floor across from your child and put a few small toys on their right and left sides.', NULL, 1, '2018-03-21 22:08:09', '2018-03-22 20:15:51'),
 (2, 'Twist Right', 'Pick a toy and offer it to your child on the right side while holding their right hand. This will require them to twist and reach out for the toy with their left hand.', NULL, 3, '2018-03-21 22:09:02', '2018-03-21 22:10:17'),
 (3, 'Twist Left', 'Repeat by offering toy on the left side and holding their left hand. Watch them rotate and reach out for the toy using the right hand', NULL, 3, '2018-03-21 22:10:07', '2018-03-21 22:10:25'),
 (4, 'Setup', 'Place a small toy in front of your child', NULL, 2, '2018-03-21 22:11:22', '2018-03-21 22:11:22'),
@@ -307,7 +318,7 @@ INSERT INTO `steps` (`id`, `title`, `description`, `picture`, `tip_id`, `created
 (10, 'Narrate', 'Give your child time to process what you have said and narrate what they do. If they reach out for the cracker and get it praise them, saying “You took the cracker!”', NULL, 6, '2018-03-21 22:15:48', '2018-03-21 22:15:48'),
 (11, 'Dance', 'Play your child’s favourite song or any song your family enjoys. If they start moving and dancing straight away, join in the dance party. If not start dancing to the first song.', NULL, 7, '2018-03-21 22:17:30', '2018-03-21 22:17:30'),
 (12, 'Encourage', 'If your child copies you applaud and cheer them on.', NULL, 7, '2018-03-21 22:18:28', '2018-03-21 22:18:28'),
-(13, 'Songs', '3)	Try a variety of songs and repeat, just make sure not to overwhelm your child with too much variety. Pay attention to the volume and the length of time you spend doing this activity.', NULL, 7, '2018-03-21 22:20:05', '2018-03-21 22:20:05'),
+(13, 'Songs', 'Try a variety of songs and repeat, just make sure not to overwhelm your child with too much variety. Pay attention to the volume and the length of time you spend doing this activity.', NULL, 7, '2018-03-21 22:20:05', '2018-03-22 20:40:30'),
 (14, 'Notice', 'Make sure to notice what your child is dawn to or excited about and focus your positive attention and words on that. Discontinue if there is any negative response.', NULL, 7, '2018-03-21 22:21:14', '2018-03-21 22:21:14'),
 (15, 'Sandbox', 'To complete this activity play in a sandbox, if this is not possible, fill a container with sand.', NULL, 8, '2018-03-21 22:22:08', '2018-03-21 22:22:08'),
 (16, 'Sand', 'Next invite your child to play with the sand by smoothing it out, flattening and patting it. Lead by example-show your child how to do it!', NULL, 9, '2018-03-21 22:23:12', '2018-03-21 22:23:12'),
@@ -318,7 +329,7 @@ INSERT INTO `steps` (`id`, `title`, `description`, `picture`, `tip_id`, `created
 (21, 'Narrate', 'If your child would rather do their own thing, model the action for them and narrate what you are doing.', NULL, 12, '2018-03-21 22:26:58', '2018-03-21 22:26:58'),
 (22, 'Puppet', 'Using a stuffed animal or a puppet, initiate a conversation with your child as the puppet. Remain focused on your child’s face so you can continue doing whatever your child likes most.', NULL, 13, '2018-03-21 22:28:47', '2018-03-21 22:28:47'),
 (23, 'Talking', 'Examples of what you can say are “Hi there! I am a sheep. I say ‘baa baa’! Can you say ‘Baa’?” Exaggerate the sounds you make and the actions of the toy', NULL, 14, '2018-03-21 22:29:38', '2018-03-21 22:29:38'),
-(24, 'Response', 'Wait for your child to respond to the animal chatter and then imitate what she says.', NULL, 15, '2018-03-21 22:30:04', '2018-03-21 22:30:04');
+(26, 'Response', 'To stimulate your child’s tactile sense.', NULL, 13, '2018-03-22 20:40:11', '2018-03-22 20:40:11');
 
 -- --------------------------------------------------------
 
@@ -353,7 +364,7 @@ INSERT INTO `tips` (`id`, `name`, `description`, `created_at`, `updated_at`) VAL
 (12, 'Avoid', 'Avoid asking too many questions or going too fast to avoid pressuring your child.', '2018-03-21 22:03:09', '2018-03-21 22:03:09'),
 (13, 'Copy', 'Watch to see if your child copies you when you pair a consonant with a vowel (consonant first).', '2018-03-21 22:03:31', '2018-03-21 22:03:31'),
 (14, 'Talk', 'Developmentally we see this combination first, as it is harder to pair a vowel with consonants.', '2018-03-21 22:04:32', '2018-03-21 22:04:32'),
-(15, 'Talk', 'The vowel sounds “ah”, “aaah”, “uh” are probably the easiest to produce at this stage.', '2018-03-21 22:04:49', '2018-03-21 22:04:49');
+(15, 'Talk', 'The vowel sounds “ah”, “aaah”, “uh” are probably the easiest to produce at this stage', '2018-03-21 22:04:49', '2018-03-22 20:08:18');
 
 -- --------------------------------------------------------
 
@@ -378,8 +389,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `is_admin`, `consent`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Mary Bloggs', 'mary@bloggs.com', '$2y$10$7a7km/9HBYsfi2tEBNfyUunxxIGEMNrVv51jk8DjoXlCKaKOOske.', 0, 1, NULL, '2018-03-21 21:50:15', '2018-03-21 21:50:15'),
-(2, 'Joe Bloggs', 'joe@bloggs.com', '$2y$10$muJd1o2FPgftUqTv4/TJ3.5FG3/XHAoGI24hDkJNnnrYWi9x4pyqW', 1, 1, 'KKmxxibIyEahunleMiaD8OsAazgNbOZP1x6Xg97de321ovBUMn8nSvbHMZRR', '2018-03-21 21:50:16', '2018-03-21 21:50:16');
+(1, 'Mary Bloggs', 'mary@bloggs.com', '$2y$10$7a7km/9HBYsfi2tEBNfyUunxxIGEMNrVv51jk8DjoXlCKaKOOske.', 0, 1, 'NOXR2hpeJa8jS0Q7WuwyUt7Avm97oPnWNu04wgWi9V7hYkpOdfKncDT6KLd1', '2018-03-21 21:50:15', '2018-03-21 21:50:15'),
+(2, 'Joe Bloggs', 'joe@bloggs.com', '$2y$10$muJd1o2FPgftUqTv4/TJ3.5FG3/XHAoGI24hDkJNnnrYWi9x4pyqW', 1, 1, 'ZliT6ybyWpUVcumZvaSgQFmbWcaU8gQumQbuMhsYc35KAmNBAvajREQQ1ivo', '2018-03-21 21:50:16', '2018-03-21 21:50:16');
 
 --
 -- Indexes for dumped tables
@@ -495,7 +506,7 @@ ALTER TABLE `activities`
 -- AUTO_INCREMENT for table `activity_step`
 --
 ALTER TABLE `activity_step`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `activity_user`
@@ -531,7 +542,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `ratings`
 --
 ALTER TABLE `ratings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -543,7 +554,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tips`
