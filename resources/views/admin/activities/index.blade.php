@@ -25,7 +25,7 @@
                                 <th>Description</th>
                                 <th>Short Description</th>
                                 <th>Tip</th>
-                                <th>Picture</th>
+                          <!--  <th>Picture</th> -->
                                 <th>Level</th>
                                 <th>Category</th>
                                 <th>Rating</th>
@@ -39,7 +39,7 @@
                                         <td>{{ $activity->description }}</td>
                                         <td>{{ $activity->short_descript }}</td>
                                         <td>{{ $activity->tip->name }}</td>
-                                        <td>{{ $activity->picture }}</td>
+                                <!--    <td>{{ $activity->picture }}</td> -->
                                         <td>{{ $activity->level->name }}</td>
                                         <td>{{ $activity->category->cat_name }}</td>
                                         <td>{{ $activity->rating->name }}</td>

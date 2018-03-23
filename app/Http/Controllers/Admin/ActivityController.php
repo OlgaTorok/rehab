@@ -71,7 +71,7 @@ class ActivityController extends Controller
            'title' => 'required|max:191',
            'description' => 'required',
            'short_descript' => 'required',
-           'picture' => 'required|max:191',
+        //   'picture' => 'required|max:191',
            'tip_id' => 'required|integer|min:0',
            'level_id' => 'required|integer|min:0',
            'category_id' => 'required|integer|min:0',
@@ -83,7 +83,7 @@ class ActivityController extends Controller
        $activity->title = $request->input('title');
        $activity->description = $request->input('description');
        $activity->short_descript = $request->input('short_descript');
-       $activity->picture = $request->input('picture');
+      // $activity->picture = $request->input('picture');
        $activity->tip_id = $request->input('tip_id');
        $activity->level_id = $request->input('level_id');
        $activity->category_id = $request->input('category_id');
@@ -119,7 +119,7 @@ class ActivityController extends Controller
      */
     public function edit($id)
     {
-        $activity = Activity::findOrFail($id);
+      $activity = Activity::findOrFail($id);
 
        return view("admin.activities.edit")->with(array(
            'activity' => $activity
@@ -141,7 +141,7 @@ class ActivityController extends Controller
             'title' => 'required|max:191',
             'description' => 'required',
             'short_descript' => 'required',
-            'picture' => 'required|max:191',
+        //    'picture' => 'required|max:191',
             'tip_id' => 'required|integer|min:0',
             'level_id' => 'required|integer|min:0',
             'category_id' => 'required|integer|min:0',
@@ -152,7 +152,7 @@ class ActivityController extends Controller
         $activity->title = $request->input('title');
         $activity->description = $request->input('description');
         $activity->short_descript = $request->input('short_descript');
-        $activity->picture = $request->input('picture');
+    //    $activity->picture = $request->input('picture');
         $activity->tip_id = $request->input('tip_id');
         $activity->level_id = $request->input('level_id');
         $activity->category_id = $request->input('category_id');
@@ -173,13 +173,13 @@ class ActivityController extends Controller
      */
     public function destroy($id)
     {
-        $activity = Activity::findOrFail($id);
+      $activity = Activity::findOrFail($id);
 
-        $activity->delete();
+      $activity->delete();
 
-        Session::flash('message', 'Activity deleted successfully!');
+      Session::flash('message', 'Activity deleted successfully');
 
-        return redirect()->route('admin.activity.index');
+      return redirect()->route('admin.activities.index');
     }
 
     /**

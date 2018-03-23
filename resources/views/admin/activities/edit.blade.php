@@ -45,10 +45,10 @@
                             </form>
                         </div> -->
 
-                        <div class="form-group">
+                    <!--    <div class="form-group">
                             <label for="picture">Picture</label>
                             <input type="text" class="form-control" id="picture" name="picture" value="{{ old('picture', $activity->picture) }}" />
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <label for="tip_id">Tip</label>
@@ -59,6 +59,7 @@
                             <label for="level_id">Level</label>
                             <input type="text" class="form-control" id="level_id" name="level_id" value="{{ old('level_id', $activity->level->name) }}" />
                         </div>
+
                         <div class="form-group">
                             <label for="category_id">Category</label>
                             <input type="text" class="form-control" id="category_id" name="category_id" value="{{ old('category_id', $activity->category->cat_name) }}" />

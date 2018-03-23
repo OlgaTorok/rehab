@@ -21,14 +21,14 @@
                         @else
                         <table class = "table table-hover table-responsive">
                             <thead>
-                                <th>ID</th>
-                                <th>Name</th>
+                          <!-- <th>ID</th> -->
+                               <th>Name</th>
                             </thead>
 
                             <tbody>
                                 @foreach ($levels as $level)
                                     <tr>
-                                        <td>{{ $level->id }}</td>
+                                      <!--  <td>{{ $level->id }}</td> -->
                                         <td>{{ $level->name }}</td>
                                         <td>
                                             <a href="{{ route('admin.levels.edit', array('level' => $level)) }}"

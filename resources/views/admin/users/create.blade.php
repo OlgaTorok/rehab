@@ -42,14 +42,15 @@
                             <input type="text" class="form-control" id="consent" name="consent" value="{{ old('consent') }}" />
                         </div>
 
-                        <div class="form-group">
+                      <!--  <div class="form-group">
                             <label for="password">Password</label>
                             <input type="text" class="form-control" id="password" name="password" value="{{ old('password') }}" />
-                        </div>
+                        </div> -->
 
                         <a href="{{ route('admin.users.index') }}" class="btn btn-default">Cancel</a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
                     </form>
+                    
                     <h3>Activity</h3>
                     @if (count($user->activities) == 0)
                     <p>There are no Activities for this User</p>

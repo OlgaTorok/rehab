@@ -24,21 +24,10 @@
                             </tr>
 
                             <tr>
-                                <td>Tip</td>
-                                <td>{{ $step->tip_id }}</td>
+                                <td>Tip Name</td>
+                                <td>{{ $step->tip->name}}</td>
                             </tr>
 
-                            <tr>
-                                <td>Tip</td>
-                                <td>{{ $step->description }}</td>
-                            </tr>
-
-
-
-                            <!-- <tr>
-                                <td>Picture</td>
-                                <td>{{ $step->picture }}</td>
-                            </tr> -->
                         </tbody>
                     </table>
 
@@ -51,8 +40,6 @@
                         <button type="submit" class="form-control btn btn-danger">Delete</a>
                     </form>
                 </div>
-
-
             </div>
         </div>
     </div>

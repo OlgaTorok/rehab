@@ -22,7 +22,6 @@
                     <form method="POST" action="{{ route('admin.steps.store') }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-
                         <div class="form-group">
                             <label for="title">Title</label>
                             <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" />
@@ -34,11 +33,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="tip_id">Tip </label>
-                            <input type="text" class="form-control" id="tip_id" name="tip_id" value="{{ old('tip_id') }}" />
+                          <label for="tip_id">Tip</label>
+                          <select class="form-control" id="tip_id" name="tip_id">
+                          @foreach ($tips as $tip)
+                              <option value="{{ $tip->id }}" {{ (old('tip_id') == $tip->id)?"selected":"" }}>{{ $tip->name }}</option>
+                          @endforeach
+                          </select>
                         </div>
 
-                        
                         <!-- <div class="form-group">
                             <label for="comment-content">Picture (URL/Photo)</label>
                             <textarea placeholder="Enter url or screenshots" style="resize: vertical"
