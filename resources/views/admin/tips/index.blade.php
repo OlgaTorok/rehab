@@ -9,7 +9,7 @@
                 <p class="alert alert-success">{{ Session::get('message')}} </p>
             @endif
 
-            <div class="col-md-6">
+            <div class="col-md-6karr">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3>Tips</h3>

@@ -50,23 +50,6 @@
                         <a href="{{ route('admin.users.index') }}" class="btn btn-default">Cancel</a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
                     </form>
-                    
-                    <h3>Activity</h3>
-                    @if (count($user->activities) == 0)
-                    <p>There are no Activities for this User</p>
-                    @else
-                    <table class="table">
-                        <tbody>
-                        @foreach ($user->activities as $activity)
-                            <tr>
-                                <td>{{ $user->title }}</td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                    @endif
-                    <a href="{{ route('admin.users.activities_create', $user->id) }}" class="btn btn-primary">Edit Activities</a>
-
 
                 </div>  <!-- panel-body -->
 
@@ -75,10 +58,4 @@
         </div>  <!-- col-md-8 col-md-offset-2 -->
     </div>  <!-- row -->
 </div>  <!-- container -->
-@endsection
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
