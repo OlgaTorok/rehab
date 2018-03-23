@@ -74,8 +74,6 @@
                     <div class="card-body">
                         <h4 class="card-title">Related Activities</h4>
                         @foreach(Auth::user()->activities()->where('activity_id', $activity->id)->get() as $activity)
-                            @if($activity->activity_id == $activity->id)
-                            @endif
                             <a href="#" class="card-link">{{ $activity->title }}</a><br />
                         @endforeach
                     </div>

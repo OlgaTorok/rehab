@@ -12,6 +12,25 @@
 </div><!--  -->
 
 <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container">
+                @if(isset($details))
+                    <p> The Search results for your query <b> {{ $query }} </b> are :</p>
+                <h2>Sample Activity details</h2>
+                <table class="table table-striped">
+                    <tbody>
+                        @foreach($details as $activity)
+                        <tr>
+                            <td>{{ $activity->name }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                @endif
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-3">
